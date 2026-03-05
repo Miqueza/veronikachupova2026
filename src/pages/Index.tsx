@@ -1,11 +1,21 @@
 import heroImage from "@/assets/hero-karting.jpg";
 import veronikaImage from "@/assets/veronika-racing.jpg";
-import { Phone, MapPin, Clock, Gift, Flag, Users, Coffee, CircleCheckBig, Camera, Pizza, Cake, Send, MessageCircle } from "lucide-react";
+import { Phone, MapPin, Clock, Gift, Flag, Users, Coffee, CircleCheckBig, Camera, Pizza, Trophy, Send, MessageCircle } from "lucide-react";
 
 const Index = () => {
+  const handleAddToCalendar = () => {
+    const title = "День рождения Вероники — 10 лет!";
+    const start = "20260522T130000Z"; // 16:00 MSK = 13:00 UTC
+    const end = "20260522T160000Z";   // 19:00 MSK = 16:00 UTC
+    const location = "Картинг-центр Зеленокарт, ТРЦ Зеленопарк";
+    const details = "Юбилей Вероники — 10 лет! Картинг, боулинг, пицца и веселье!";
+    const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${start}/${end}&location=${encodeURIComponent(location)}&details=${encodeURIComponent(details)}`;
+    window.open(url, "_blank");
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground font-body">
-      {/* Veronika Poster Section */}
+      {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-end overflow-hidden pb-12">
         <div className="absolute inset-0">
           <img src={heroImage} alt="Картинг трасса" className="w-full h-full object-cover opacity-20 blur-sm scale-110" />
@@ -25,11 +35,13 @@ const Index = () => {
           </div>
 
           <p className="text-primary font-display text-sm md:text-base tracking-[0.3em] uppercase animate-pulse-glow">
-            🏁 Приглашение на день рождения 🏁
+            Приглашение на день рождения
           </p>
 
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-display uppercase text-foreground text-glow leading-tight mt-3">
-            Веронике — <span className="text-primary">10</span> лет!
+            Веронике
+            <br />
+            <span className="text-primary">10</span> лет!
           </h1>
 
           <div className="checkered-line w-48 mx-auto rounded-full mt-4" />
@@ -41,10 +53,14 @@ const Index = () => {
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 text-lg md:text-xl pt-4">
-            <span className="flex items-center gap-2 bg-secondary px-4 py-2 rounded-lg border border-border">
+            <button
+              onClick={handleAddToCalendar}
+              className="flex items-center gap-2 bg-secondary px-4 py-2 rounded-lg border border-border hover:border-primary transition-colors cursor-pointer"
+              title="Добавить в календарь"
+            >
               <Clock className="w-5 h-5 text-primary" />
               22 мая 2026, с 16:00
-            </span>
+            </button>
             <span className="flex items-center gap-2 bg-secondary px-4 py-2 rounded-lg border border-border">
               <MapPin className="w-5 h-5 text-primary" />
               Зеленопарк, Зеленокарт
@@ -72,11 +88,6 @@ const Index = () => {
               description="Пицца, бургеры, наггетсы и газировка — всё, что любят дети!"
             />
             <PerkCard
-              icon={<Cake className="w-8 h-8" />}
-              title="Шикарный торт"
-              description="В перерыве между заездами будет потрясающий праздничный торт 🎂"
-            />
-            <PerkCard
               icon={<Camera className="w-8 h-8" />}
               title="Фотограф"
               description="Профессиональные фотографии мероприятия — заберёте на память!"
@@ -87,12 +98,12 @@ const Index = () => {
               description="Тренировка, квалификация и финальная гонка на 20 кругов!"
             />
             <PerkCard
-              icon={<span className="text-3xl">🏆</span>}
+              icon={<Trophy className="w-8 h-8" />}
               title="Награждение"
               description="Церемония на пьедестале с медалями и шампанским!"
             />
             <PerkCard
-              icon={<span className="text-3xl">🎳</span>}
+              icon={<Users className="w-8 h-8" />}
               title="Боулинг"
               description="После гонок — 2 дорожки боулинга и веселье на целый час!"
             />
@@ -123,21 +134,21 @@ const Index = () => {
             <ScheduleItem
               time="17:00 — 18:00"
               icon={<Flag className="w-6 h-6" />}
-              title="Гонки и награждение 🏆"
+              title="Гонки и награждение"
               description=""
               isHighlighted
             >
-              <div className="space-y-3 mt-3">
-                <RaceStep step="1️⃣" title="Тренировочный заезд" detail="10 минут" />
-                <RaceStep step="2️⃣" title="Квалификационный заезд" detail="10 минут" />
-                <RaceStep step="3️⃣" title="Перерыв" detail="10–15 минут" />
-                <RaceStep step="4️⃣" title="Гонка" detail="20 кругов" />
-                <RaceStep step="🏆" title="Награждение на пьедестале" detail="медали и шампанское!" />
+              <div className="space-y-4 mt-4">
+                <RaceStep num={1} title="Тренировочный заезд" detail="10 минут" />
+                <RaceStep num={2} title="Квалификационный заезд" detail="10 минут" />
+                <RaceStep num={3} title="Перерыв" detail="10–15 минут" />
+                <RaceStep num={4} title="Гонка" detail="20 кругов" />
+                <RaceStep num={5} title="Награждение на пьедестале" detail="Медали и шампанское" icon={<Trophy className="w-4 h-4" />} />
               </div>
             </ScheduleItem>
             <ScheduleItem
               time="18:00 — 19:00"
-              icon={<span className="text-2xl">🎳</span>}
+              icon={<Users className="w-6 h-6" />}
               title="Боулинг и пицца"
               description="Переходим в зону боулинга — 2 дорожки, пицца и веселье! В ожидании своего броска можно перекусить."
             />
@@ -152,105 +163,109 @@ const Index = () => {
             Важная информация
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            <InfoCard
-              icon={<Clock className="w-8 h-8 text-primary" />}
-              title="Время"
-              lines={[
-                "Привезти ребёнка к 16:00",
-                "Забрать в 19:00",
-              ]}
-            />
-            <InfoCard
-              icon={<MapPin className="w-8 h-8 text-primary" />}
-              title="Место"
-              lines={[
-                "Картинг-центр Зеленокарт",
-                "ТРЦ Зеленопарк",
-              ]}
-            />
-            <InfoCard
-              icon={<Gift className="w-8 h-8 text-accent" />}
-              title="Подарки"
-              lines={[
-                "Вишлист Вероники — выберите",
-                "и забронируйте подарок 🎁",
-              ]}
-              action={
-                <a
-                  href="#"
-                  className="inline-block mt-3 px-5 py-2 bg-accent text-accent-foreground font-display text-sm uppercase rounded-lg hover:opacity-90 transition-opacity"
-                >
-                  Открыть вишлист
-                </a>
-              }
-            />
-            <InfoCard
-              icon={<CircleCheckBig className="w-8 h-8 text-primary" />}
-              title="Подтверждение"
-              lines={[
-                "Просьба подтвердить присутствие",
-                "заранее по контактам ниже",
-              ]}
-            />
+          <div className="space-y-6">
+            {/* Время */}
+            <div className="space-y-3">
+              <div className="flex items-center justify-center gap-2">
+                <Clock className="w-6 h-6 text-primary" />
+                <h3 className="font-display text-foreground uppercase text-lg">Время</h3>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-card border border-border rounded-xl p-5 text-center space-y-2">
+                  <p className="text-primary font-display text-2xl">16:00</p>
+                  <p className="text-muted-foreground text-sm">Привезти ребёнка</p>
+                </div>
+                <div className="bg-card border border-border rounded-xl p-5 text-center space-y-2">
+                  <p className="text-primary font-display text-2xl">19:00</p>
+                  <p className="text-muted-foreground text-sm">Забрать ребёнка</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Место */}
+            <div className="bg-card border border-border rounded-xl p-6 text-center space-y-3">
+              <div className="flex justify-center">
+                <MapPin className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-display text-foreground uppercase">Место</h3>
+              <p className="text-muted-foreground text-sm">Картинг-центр Зеленокарт</p>
+              <p className="text-muted-foreground text-sm">ТРЦ Зеленопарк</p>
+            </div>
+
+            {/* Подарки */}
+            <div className="bg-card border border-border rounded-xl p-6 text-center space-y-3">
+              <div className="flex justify-center">
+                <Gift className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-display text-foreground uppercase">Подарки</h3>
+              <p className="text-muted-foreground text-sm">Вишлист Вероники — выберите</p>
+              <p className="text-muted-foreground text-sm">и забронируйте подарок</p>
+              <a
+                href="#"
+                className="inline-block mt-3 px-5 py-2 bg-primary text-primary-foreground font-display text-sm uppercase rounded-lg hover:opacity-90 transition-opacity"
+              >
+                Открыть вишлист
+              </a>
+            </div>
+
+            {/* Подтверждение */}
+            <div className="bg-card border border-border rounded-xl p-6 text-center space-y-3">
+              <div className="flex justify-center">
+                <CircleCheckBig className="w-8 h-8 text-primary" />
+              </div>
+              <h3 className="font-display text-foreground uppercase">Подтверждение</h3>
+              <p className="text-muted-foreground text-sm">Просьба подтвердить присутствие</p>
+              <p className="text-muted-foreground text-sm">не позже 13 марта 2026</p>
+            </div>
           </div>
 
           <div className="text-center text-muted-foreground text-sm mt-4">
-            <p>👟 Рекомендуем удобную закрытую обувь и одежду, в которой комфортно двигаться</p>
+            <p>Рекомендуем удобную закрытую обувь и одежду, в которой комфортно двигаться</p>
           </div>
         </div>
       </section>
 
       {/* Contact */}
       <section className="py-16 px-4">
-        <div className="max-w-md mx-auto text-center space-y-6">
+        <div className="max-w-lg mx-auto text-center space-y-6">
           <h2 className="text-2xl md:text-3xl font-display uppercase text-primary text-glow">
-            Контакт
+            Контакты папы Вероники
           </h2>
-          <p className="text-muted-foreground">По всем вопросам обращайтесь:</p>
+          <p className="text-foreground font-display text-lg">Даниил</p>
 
-          <div className="space-y-3">
+          <div className="grid grid-cols-3 gap-3">
             <a
               href="tel:+79067302360"
-              className="flex items-center gap-3 bg-card border border-border px-5 py-3 rounded-xl hover:border-primary transition-colors group"
+              className="flex flex-col items-center gap-2 bg-card border border-border p-4 rounded-xl hover:border-primary transition-colors group"
             >
-              <Phone className="w-6 h-6 text-primary group-hover:animate-pulse-glow flex-shrink-0" />
-              <div className="text-left">
-                <p className="font-display text-foreground text-sm">Даниил (папа)</p>
-                <p className="text-primary font-semibold text-sm">+7 (906) 730-23-60</p>
-              </div>
+              <Phone className="w-7 h-7 text-primary group-hover:scale-110 transition-transform" />
+              <p className="font-display text-foreground text-xs">Звонок</p>
             </a>
 
             <a
               href="https://t.me/miqueza"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 bg-card border border-border px-5 py-3 rounded-xl hover:border-[hsl(200_100%_50%)] transition-colors group"
+              className="flex flex-col items-center gap-2 bg-card border border-border p-4 rounded-xl hover:border-primary transition-colors group"
             >
-              <Send className="w-6 h-6 text-[hsl(200_100%_50%)] group-hover:animate-pulse-glow flex-shrink-0" />
-              <div className="text-left">
-                <p className="font-display text-foreground text-sm">Telegram</p>
-                <p className="text-[hsl(200_100%_50%)] font-semibold text-sm">@miqueza</p>
-              </div>
+              <Send className="w-7 h-7 text-primary group-hover:scale-110 transition-transform" />
+              <p className="font-display text-foreground text-xs">Telegram</p>
             </a>
 
             <a
               href="https://max.ru/call/+79067302360"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-3 bg-card border border-border px-5 py-3 rounded-xl hover:border-accent transition-colors group"
+              className="flex flex-col items-center gap-2 bg-card border border-border p-4 rounded-xl hover:border-primary transition-colors group"
             >
-              <MessageCircle className="w-6 h-6 text-accent group-hover:animate-pulse-glow flex-shrink-0" />
-              <div className="text-left">
-                <p className="font-display text-foreground text-sm">Max (мессенджер)</p>
-                <p className="text-accent font-semibold text-sm">+7 (906) 730-23-60</p>
-              </div>
+              <MessageCircle className="w-7 h-7 text-primary group-hover:scale-110 transition-transform" />
+              <p className="font-display text-foreground text-xs">Max</p>
             </a>
           </div>
 
           <div className="checkered-line w-32 mx-auto rounded-full mt-8" />
           <p className="text-muted-foreground text-sm pt-4">
-            Ждём на трассе! 🏎️💨
+            Ждём на трассе!
           </p>
         </div>
       </section>
@@ -314,35 +329,20 @@ function ScheduleItem({
   );
 }
 
-function RaceStep({ step, title, detail }: { step: string; title: string; detail: string }) {
+function RaceStep({ num, title, detail, icon }: { num: number; title: string; detail: string; icon?: React.ReactNode }) {
   return (
-    <div className="flex items-center gap-3 text-sm">
-      <span className="text-lg">{step}</span>
-      <span className="font-semibold text-foreground">{title}</span>
-      <span className="text-muted-foreground">— {detail}</span>
-    </div>
-  );
-}
-
-function InfoCard({
-  icon,
-  title,
-  lines,
-  action,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  lines: string[];
-  action?: React.ReactNode;
-}) {
-  return (
-    <div className="bg-card border border-border rounded-xl p-6 text-center space-y-3">
-      <div className="flex justify-center">{icon}</div>
-      <h3 className="font-display text-foreground uppercase">{title}</h3>
-      {lines.map((line, i) => (
-        <p key={i} className="text-muted-foreground text-sm">{line}</p>
-      ))}
-      {action}
+    <div className="flex items-start gap-3">
+      <div className="flex-shrink-0 w-7 h-7 rounded-md border border-primary/60 bg-primary/10 flex items-center justify-center">
+        {icon ? (
+          <span className="text-primary">{icon}</span>
+        ) : (
+          <span className="text-primary font-display text-xs">{num}</span>
+        )}
+      </div>
+      <div>
+        <p className="font-semibold text-foreground text-sm">{title}</p>
+        <p className="text-muted-foreground text-xs">{detail}</p>
+      </div>
     </div>
   );
 }
