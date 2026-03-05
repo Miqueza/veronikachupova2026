@@ -1,34 +1,46 @@
 import heroImage from "@/assets/hero-karting.jpg";
-import { Phone, MapPin, Clock, Gift, Flag, Trophy, Users, Coffee, CircleCheckBig } from "lucide-react";
+import veronikaImage from "@/assets/veronika-racing.jpg";
+import { Phone, MapPin, Clock, Gift, Flag, Users, Coffee, CircleCheckBig, Camera, Pizza, Cake, Send, MessageCircle } from "lucide-react";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground font-body">
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
+      {/* Veronika Poster Section */}
+      <section className="relative min-h-screen flex flex-col items-center justify-end overflow-hidden pb-12">
         <div className="absolute inset-0">
-          <img src={heroImage} alt="Картинг" className="w-full h-full object-cover opacity-40" />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background" />
+          <img src={heroImage} alt="Картинг трасса" className="w-full h-full object-cover opacity-20 blur-sm scale-110" />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background" />
         </div>
 
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto space-y-6">
+        <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-2xl mx-auto">
+          <div className="relative mb-6">
+            <div className="absolute -inset-3 bg-primary/20 rounded-2xl blur-2xl animate-pulse-glow" />
+            <div className="relative overflow-hidden rounded-2xl border-2 border-primary/50 shadow-[0_0_40px_hsl(120_100%_45%/0.3)]">
+              <img
+                src={veronikaImage}
+                alt="Вероника — гонщица"
+                className="w-72 md:w-80 lg:w-96 object-cover"
+              />
+            </div>
+          </div>
+
           <p className="text-primary font-display text-sm md:text-base tracking-[0.3em] uppercase animate-pulse-glow">
             🏁 Приглашение на день рождения 🏁
           </p>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display uppercase text-foreground text-glow leading-tight">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display uppercase text-foreground text-glow leading-tight mt-3">
             Веронике — <span className="text-primary">10</span> лет!
           </h1>
 
-          <div className="checkered-line w-48 mx-auto rounded-full" />
+          <div className="checkered-line w-48 mx-auto rounded-full mt-4" />
 
-          <p className="text-xl md:text-2xl font-body font-light text-muted-foreground">
+          <p className="text-xl md:text-2xl font-body font-light text-muted-foreground mt-4">
             Юбилей отмечаем на трассе{" "}
             <span className="text-primary font-semibold">Зеленокарт</span>{" "}
             в Зеленопарке
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 text-lg md:text-xl pt-2">
+          <div className="flex flex-wrap items-center justify-center gap-4 text-lg md:text-xl pt-4">
             <span className="flex items-center gap-2 bg-secondary px-4 py-2 rounded-lg border border-border">
               <Clock className="w-5 h-5 text-primary" />
               22 мая 2026, с 16:00
@@ -40,10 +52,51 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="absolute bottom-8 animate-bounce">
+        <div className="absolute bottom-4 animate-bounce">
           <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
           </svg>
+        </div>
+      </section>
+
+      {/* Perks Section */}
+      <section className="py-16 md:py-24 px-4 bg-secondary/30">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-display text-center uppercase mb-12 text-glow text-primary">
+            Что вас ждёт
+          </h2>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <PerkCard
+              icon={<Pizza className="w-8 h-8" />}
+              title="Вкусная еда"
+              description="Пицца, бургеры, наггетсы и газировка — всё, что любят дети!"
+            />
+            <PerkCard
+              icon={<Cake className="w-8 h-8" />}
+              title="Шикарный торт"
+              description="В перерыве между заездами будет потрясающий праздничный торт 🎂"
+            />
+            <PerkCard
+              icon={<Camera className="w-8 h-8" />}
+              title="Фотограф"
+              description="Профессиональные фотографии мероприятия — заберёте на память!"
+            />
+            <PerkCard
+              icon={<Flag className="w-8 h-8" />}
+              title="Настоящие гонки"
+              description="Тренировка, квалификация и финальная гонка на 20 кругов!"
+            />
+            <PerkCard
+              icon={<span className="text-3xl">🏆</span>}
+              title="Награждение"
+              description="Церемония на пьедестале с медалями и шампанским!"
+            />
+            <PerkCard
+              icon={<span className="text-3xl">🎳</span>}
+              title="Боулинг"
+              description="После гонок — 2 дорожки боулинга и веселье на целый час!"
+            />
+          </div>
         </div>
       </section>
 
@@ -70,7 +123,7 @@ const Index = () => {
             <ScheduleItem
               time="17:00 — 18:00"
               icon={<Flag className="w-6 h-6" />}
-              title="Гонки!"
+              title="Гонки и награждение 🏆"
               description=""
               isHighlighted
             >
@@ -79,15 +132,9 @@ const Index = () => {
                 <RaceStep step="2️⃣" title="Квалификационный заезд" detail="10 минут" />
                 <RaceStep step="3️⃣" title="Перерыв" detail="10–15 минут" />
                 <RaceStep step="4️⃣" title="Гонка" detail="20 кругов" />
+                <RaceStep step="🏆" title="Награждение на пьедестале" detail="медали и шампанское!" />
               </div>
             </ScheduleItem>
-            <ScheduleItem
-              time="~18:00"
-              icon={<Trophy className="w-6 h-6" />}
-              title="Награждение 🏆"
-              description="Церемония на пьедестале в центре трассы с медалями и шампанским!"
-              isHighlighted
-            />
             <ScheduleItem
               time="18:00 — 19:00"
               icon={<span className="text-2xl">🎳</span>}
@@ -161,16 +208,45 @@ const Index = () => {
             Контакт
           </h2>
           <p className="text-muted-foreground">По всем вопросам обращайтесь:</p>
-          <a
-            href="tel:+79067302360"
-            className="inline-flex items-center gap-3 bg-card border border-border px-6 py-4 rounded-xl hover:border-primary transition-colors group"
-          >
-            <Phone className="w-6 h-6 text-primary group-hover:animate-pulse-glow" />
-            <div className="text-left">
-              <p className="font-display text-foreground">Даниил (папа)</p>
-              <p className="text-primary font-semibold">+7 (906) 730-23-60</p>
-            </div>
-          </a>
+
+          <div className="space-y-3">
+            <a
+              href="tel:+79067302360"
+              className="flex items-center gap-3 bg-card border border-border px-5 py-3 rounded-xl hover:border-primary transition-colors group"
+            >
+              <Phone className="w-6 h-6 text-primary group-hover:animate-pulse-glow flex-shrink-0" />
+              <div className="text-left">
+                <p className="font-display text-foreground text-sm">Даниил (папа)</p>
+                <p className="text-primary font-semibold text-sm">+7 (906) 730-23-60</p>
+              </div>
+            </a>
+
+            <a
+              href="https://t.me/miqueza"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 bg-card border border-border px-5 py-3 rounded-xl hover:border-[hsl(200_100%_50%)] transition-colors group"
+            >
+              <Send className="w-6 h-6 text-[hsl(200_100%_50%)] group-hover:animate-pulse-glow flex-shrink-0" />
+              <div className="text-left">
+                <p className="font-display text-foreground text-sm">Telegram</p>
+                <p className="text-[hsl(200_100%_50%)] font-semibold text-sm">@miqueza</p>
+              </div>
+            </a>
+
+            <a
+              href="https://max.ru/call/+79067302360"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-3 bg-card border border-border px-5 py-3 rounded-xl hover:border-accent transition-colors group"
+            >
+              <MessageCircle className="w-6 h-6 text-accent group-hover:animate-pulse-glow flex-shrink-0" />
+              <div className="text-left">
+                <p className="font-display text-foreground text-sm">Max (мессенджер)</p>
+                <p className="text-accent font-semibold text-sm">+7 (906) 730-23-60</p>
+              </div>
+            </a>
+          </div>
 
           <div className="checkered-line w-32 mx-auto rounded-full mt-8" />
           <p className="text-muted-foreground text-sm pt-4">
@@ -181,6 +257,26 @@ const Index = () => {
     </div>
   );
 };
+
+function PerkCard({
+  icon,
+  title,
+  description,
+}: {
+  icon: React.ReactNode;
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="bg-card border border-border rounded-xl p-6 text-center space-y-3 hover:border-primary/50 transition-colors group">
+      <div className="flex justify-center text-primary group-hover:scale-110 transition-transform">
+        {icon}
+      </div>
+      <h3 className="font-display text-foreground uppercase text-sm">{title}</h3>
+      <p className="text-muted-foreground text-sm">{description}</p>
+    </div>
+  );
+}
 
 function ScheduleItem({
   time,
