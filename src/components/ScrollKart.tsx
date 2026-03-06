@@ -5,7 +5,6 @@ export default function ScrollKart() {
   const [direction, setDirection] = useState<"down" | "up">("down");
   const lastScroll = useRef(0);
   const hideTimer = useRef<ReturnType<typeof setTimeout>>();
-  const trailRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -33,8 +32,7 @@ export default function ScrollKart() {
     >
       {/* Smoke trail */}
       <div
-        ref={trailRef}
-        className="absolute left-1/2 -translate-x-1/2 w-6 flex flex-col items-center gap-[2px]"
+        className="absolute left-1/2 -translate-x-1/2 flex flex-col items-center gap-[2px]"
         style={{
           [direction === "down" ? "bottom" : "top"]: "100%",
         }}
@@ -53,26 +51,40 @@ export default function ScrollKart() {
         ))}
       </div>
 
-      {/* Kart icon */}
+      {/* Go-kart SVG */}
       <svg
-        width="32"
-        height="32"
-        viewBox="0 0 24 24"
+        width="40"
+        height="24"
+        viewBox="0 0 40 24"
         fill="none"
-        className="text-primary transition-transform duration-300"
+        className="text-primary drop-shadow-[0_0_6px_hsl(120_100%_45%/0.5)]"
         style={{
-          transform: direction === "up" ? "scaleY(-1)" : "scaleY(1)",
+          transform: direction === "up" ? "rotate(180deg)" : "rotate(0deg)",
+          transition: "transform 0.3s ease",
         }}
       >
-        {/* Kart body */}
-        <rect x="4" y="10" width="16" height="5" rx="2" fill="currentColor" opacity="0.9" />
-        {/* Driver */}
-        <circle cx="12" cy="8" r="3" fill="currentColor" opacity="0.7" />
-        {/* Wheels */}
-        <circle cx="7" cy="17" r="2" fill="currentColor" />
-        <circle cx="17" cy="17" r="2" fill="currentColor" />
-        {/* Axle */}
-        <rect x="6" y="15" width="12" height="1.5" rx="0.75" fill="currentColor" opacity="0.5" />
+        {/* Chassis */}
+        <rect x="6" y="8" width="28" height="7" rx="3" fill="currentColor" opacity="0.85" />
+        {/* Front spoiler */}
+        <rect x="30" y="10" width="8" height="3" rx="1" fill="currentColor" opacity="0.6" />
+        {/* Rear wing */}
+        <rect x="2" y="7" width="6" height="2" rx="1" fill="currentColor" opacity="0.7" />
+        {/* Driver helmet */}
+        <circle cx="18" cy="7" r="4" fill="currentColor" opacity="0.7" />
+        <path d="M15 7 Q18 3 21 7" fill="currentColor" opacity="0.9" />
+        {/* Steering wheel */}
+        <rect x="22" y="9" width="4" height="1.5" rx="0.5" fill="hsl(120 10% 5%)" opacity="0.5" />
+        {/* Rear wheels */}
+        <ellipse cx="9" cy="18" rx="4" ry="3.5" fill="currentColor" />
+        <ellipse cx="9" cy="18" rx="2.5" ry="2" fill="hsl(120 10% 5%)" opacity="0.4" />
+        {/* Front wheels */}
+        <ellipse cx="31" cy="18" rx="4" ry="3.5" fill="currentColor" />
+        <ellipse cx="31" cy="18" rx="2.5" ry="2" fill="hsl(120 10% 5%)" opacity="0.4" />
+        {/* Axles */}
+        <rect x="5" y="15" width="8" height="1" rx="0.5" fill="currentColor" opacity="0.4" />
+        <rect x="27" y="15" width="8" height="1" rx="0.5" fill="currentColor" opacity="0.4" />
+        {/* Number */}
+        <text x="16" y="14" fontSize="5" fontWeight="bold" fill="hsl(120 10% 5%)" opacity="0.6">10</text>
       </svg>
     </div>
   );
