@@ -1,6 +1,8 @@
 import heroImage from "@/assets/hero-karting.jpg";
 import veronikaImage from "@/assets/veronika-racing.jpg";
-import { Phone, MapPin, Clock, Gift, Flag, Users, Coffee, CircleCheckBig, Camera, Pizza, Trophy, Send, MessageCircle, AlertTriangle } from "lucide-react";
+import { Phone, MapPin, Clock, Gift, Flag, Users, Coffee, CircleCheckBig, Camera, Pizza, Trophy, Send, MessageCircle } from "lucide-react";
+import Countdown from "@/components/Countdown";
+import ScrollKart from "@/components/ScrollKart";
 
 const Index = () => {
   const handleAddToCalendar = () => {
