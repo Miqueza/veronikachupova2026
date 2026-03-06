@@ -1,6 +1,8 @@
 import heroImage from "@/assets/hero-karting.jpg";
 import veronikaImage from "@/assets/veronika-racing.jpg";
-import { Phone, MapPin, Clock, Gift, Flag, Users, Coffee, CircleCheckBig, Camera, Pizza, Trophy, Send, MessageCircle, AlertTriangle } from "lucide-react";
+import { Phone, MapPin, Clock, Gift, Flag, Users, Coffee, CircleCheckBig, Camera, Pizza, Trophy, Send, MessageCircle } from "lucide-react";
+import Countdown from "@/components/Countdown";
+import ScrollKart from "@/components/ScrollKart";
 
 const Index = () => {
   const handleAddToCalendar = () => {
@@ -27,7 +29,9 @@ const Index = () => {
             Вероника будет рада видеть вашего ребёнка на&nbsp;праздновании своего юбилея
           </p>
 
-          <div className="relative mb-6">
+          <Countdown />
+
+          <div className="relative mb-6 mt-4">
             <div className="absolute -inset-3 bg-primary/20 rounded-2xl blur-2xl animate-pulse-glow" />
             <div className="relative overflow-hidden rounded-2xl border-2 border-primary/50 shadow-[0_0_40px_hsl(120_100%_45%/0.3)]">
               <img
@@ -293,6 +297,7 @@ const Index = () => {
           </p>
         </div>
       </section>
+      <ScrollKart />
     </div>
   );
 };
