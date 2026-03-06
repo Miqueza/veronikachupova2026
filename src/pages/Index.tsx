@@ -1,6 +1,6 @@
 import heroImage from "@/assets/hero-karting.jpg";
 import veronikaImage from "@/assets/veronika-racing.jpg";
-import { Phone, MapPin, Clock, Gift, Flag, Users, Coffee, CircleCheckBig, Camera, Pizza, Trophy, Send, MessageCircle } from "lucide-react";
+import { Phone, MapPin, Clock, Gift, Flag, Users, Coffee, CircleCheckBig, Camera, Pizza, Trophy, Send, MessageCircle, AlertTriangle } from "lucide-react";
 
 const Index = () => {
   const handleAddToCalendar = () => {
@@ -18,11 +18,15 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative min-h-screen flex flex-col items-center justify-end overflow-hidden pb-12">
         <div className="absolute inset-0">
-          <img src={heroImage} alt="Картинг трасса" className="w-full h-full object-cover opacity-20 blur-sm scale-110" />
+          <img src={heroImage} alt="Картинг-трасса" className="w-full h-full object-cover opacity-20 blur-sm scale-110" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background" />
         </div>
 
         <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-sm md:text-base mb-4">
+            Вероника будет рада видеть вашего ребёнка на&nbsp;праздновании своего юбилея
+          </p>
+
           <div className="relative mb-6">
             <div className="absolute -inset-3 bg-primary/20 rounded-2xl blur-2xl animate-pulse-glow" />
             <div className="relative overflow-hidden rounded-2xl border-2 border-primary/50 shadow-[0_0_40px_hsl(120_100%_45%/0.3)]">
@@ -47,19 +51,22 @@ const Index = () => {
           <div className="checkered-line w-48 mx-auto rounded-full mt-4" />
 
           <p className="text-xl md:text-2xl font-body font-light text-muted-foreground mt-4">
-            Юбилей отмечаем на трассе{" "}
+            Юбилей отмечаем на&nbsp;трассе{" "}
             <span className="text-primary font-semibold">Зеленокарт</span>{" "}
-            в Зеленопарке
+            в&nbsp;Зеленопарке
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-4 text-lg md:text-xl pt-4">
             <button
               onClick={handleAddToCalendar}
-              className="flex items-center gap-2 bg-secondary px-4 py-2 rounded-lg border border-border hover:border-primary transition-colors cursor-pointer"
+              className="flex flex-col items-center gap-1 bg-secondary px-4 py-2 rounded-lg border border-border hover:border-primary transition-colors cursor-pointer"
               title="Добавить в календарь"
             >
-              <Clock className="w-5 h-5 text-primary" />
-              22 мая 2026, с 16:00
+              <span className="flex items-center gap-2">
+                <Clock className="w-5 h-5 text-primary" />
+                22 мая 2026, 16:00
+              </span>
+              <span className="text-xs text-muted-foreground">Нажмите, чтобы добавить в&nbsp;календарь</span>
             </button>
             <span className="flex items-center gap-2 bg-secondary px-4 py-2 rounded-lg border border-border">
               <MapPin className="w-5 h-5 text-primary" />
@@ -81,32 +88,38 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-display text-center uppercase mb-12 text-glow text-primary">
             Что вас ждёт
           </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <PerkCard
-              icon={<Pizza className="w-8 h-8" />}
-              title="Вкусная еда"
-              description="Пицца, бургеры, наггетсы и газировка — всё, что любят дети!"
-            />
-            <PerkCard
-              icon={<Camera className="w-8 h-8" />}
-              title="Фотограф"
-              description="Профессиональные фотографии мероприятия — заберёте на память!"
-            />
-            <PerkCard
-              icon={<Flag className="w-8 h-8" />}
-              title="Настоящие гонки"
-              description="Тренировка, квалификация и финальная гонка на 20 кругов!"
-            />
-            <PerkCard
-              icon={<Trophy className="w-8 h-8" />}
-              title="Награждение"
-              description="Церемония на пьедестале с медалями и шампанским!"
-            />
-            <PerkCard
-              icon={<Users className="w-8 h-8" />}
-              title="Боулинг"
-              description="После гонок — 2 дорожки боулинга и веселье на целый час!"
-            />
+          <div className="space-y-6">
+            <div className="grid grid-cols-2 gap-6">
+              <PerkCard
+                icon={<Pizza className="w-8 h-8" />}
+                title="Вкусная еда"
+                description="Пицца, бургеры, наггетсы и&nbsp;газировка&nbsp;— всё, что любят дети!"
+              />
+              <PerkCard
+                icon={<Camera className="w-8 h-8" />}
+                title="Фотограф"
+                description="Профессиональные фотографии мероприятия&nbsp;— заберёте на&nbsp;память!"
+              />
+            </div>
+            <div className="grid grid-cols-1 max-w-sm mx-auto">
+              <PerkCard
+                icon={<Flag className="w-8 h-8" />}
+                title="Настоящие гонки"
+                description="Тренировка, квалификация и&nbsp;финальная гонка на&nbsp;20&nbsp;кругов!"
+              />
+            </div>
+            <div className="grid grid-cols-2 gap-6">
+              <PerkCard
+                icon={<Trophy className="w-8 h-8" />}
+                title="Награждение"
+                description="Церемония на&nbsp;пьедестале с&nbsp;медалями и&nbsp;шампанским!"
+              />
+              <PerkCard
+                icon={<Users className="w-8 h-8" />}
+                title="Боулинг"
+                description="После гонок&nbsp;— 2&nbsp;дорожки боулинга и&nbsp;веселье на&nbsp;целый час!"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -120,19 +133,19 @@ const Index = () => {
 
           <div className="space-y-4">
             <ScheduleItem
-              time="16:00 — 16:30"
+              time="16:00–16:30"
               icon={<Coffee className="w-6 h-6" />}
               title="Сбор и лёгкий фуршет"
-              description="Фрукты, овощи, перекусы и напитки. Встречаемся и настраиваемся на гонку!"
+              description="Фрукты, овощи, перекусы и&nbsp;напитки. Встречаемся и&nbsp;настраиваемся на&nbsp;гонку!"
             />
             <ScheduleItem
-              time="16:30 — 17:00"
+              time="16:30–17:00"
               icon={<Users className="w-6 h-6" />}
               title="Подготовка к заезду"
-              description="Инструктаж по безопасности и переодевание в гоночную экипировку"
+              description="Инструктаж по&nbsp;безопасности и&nbsp;переодевание в&nbsp;гоночную экипировку"
             />
             <ScheduleItem
-              time="17:00 — 18:00"
+              time="17:00–18:00"
               icon={<Flag className="w-6 h-6" />}
               title="Гонки и награждение"
               description=""
@@ -147,11 +160,19 @@ const Index = () => {
               </div>
             </ScheduleItem>
             <ScheduleItem
-              time="18:00 — 19:00"
+              time="18:00–19:00"
               icon={<Users className="w-6 h-6" />}
               title="Боулинг и пицца"
-              description="Переходим в зону боулинга — 2 дорожки, пицца и веселье! В ожидании своего броска можно перекусить."
+              description="Переходим в&nbsp;зону боулинга&nbsp;— 2&nbsp;дорожки, пицца и&nbsp;веселье! В&nbsp;ожидании своего броска можно перекусить"
             />
+            <ScheduleItem
+              time="19:00–19:30"
+              icon={<Clock className="w-6 h-6" />}
+              title="Завершение мероприятия"
+              description="Ожидание родителей"
+            >
+              <p className="text-muted-foreground text-xs mt-2 italic">Пожалуйста, не&nbsp;опаздывайте</p>
+            </ScheduleItem>
           </div>
         </div>
       </section>
@@ -165,17 +186,17 @@ const Index = () => {
 
           <div className="space-y-6">
             {/* Время */}
-            <div className="space-y-3">
+            <div className="bg-card border border-border rounded-xl p-6 space-y-4">
               <div className="flex items-center justify-center gap-2">
                 <Clock className="w-6 h-6 text-primary" />
                 <h3 className="font-display text-foreground uppercase text-lg">Время</h3>
               </div>
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-card border border-border rounded-xl p-5 text-center space-y-2">
+                <div className="bg-secondary border border-border rounded-xl p-5 text-center space-y-2">
                   <p className="text-primary font-display text-2xl">16:00</p>
                   <p className="text-muted-foreground text-sm">Привезти ребёнка</p>
                 </div>
-                <div className="bg-card border border-border rounded-xl p-5 text-center space-y-2">
+                <div className="bg-secondary border border-border rounded-xl p-5 text-center space-y-2">
                   <p className="text-primary font-display text-2xl">19:00</p>
                   <p className="text-muted-foreground text-sm">Забрать ребёнка</p>
                 </div>
@@ -198,8 +219,8 @@ const Index = () => {
                 <Gift className="w-8 h-8 text-primary" />
               </div>
               <h3 className="font-display text-foreground uppercase">Подарки</h3>
-              <p className="text-muted-foreground text-sm">Вишлист Вероники — выберите</p>
-              <p className="text-muted-foreground text-sm">и забронируйте подарок</p>
+              <p className="text-muted-foreground text-sm">Вишлист Вероники&nbsp;— выберите</p>
+              <p className="text-muted-foreground text-sm">и&nbsp;забронируйте подарок</p>
               <a
                 href="#"
                 className="inline-block mt-3 px-5 py-2 bg-primary text-primary-foreground font-display text-sm uppercase rounded-lg hover:opacity-90 transition-opacity"
@@ -215,12 +236,15 @@ const Index = () => {
               </div>
               <h3 className="font-display text-foreground uppercase">Подтверждение</h3>
               <p className="text-muted-foreground text-sm">Просьба подтвердить присутствие</p>
-              <p className="text-muted-foreground text-sm">не позже 13 марта 2026</p>
+              <p className="text-muted-foreground text-sm">по&nbsp;контактам ниже не&nbsp;позже 13&nbsp;марта 2026</p>
             </div>
-          </div>
 
-          <div className="text-center text-muted-foreground text-sm mt-4">
-            <p>Рекомендуем удобную закрытую обувь и одежду, в которой комфортно двигаться</p>
+            {/* Рекомендация по одежде */}
+            <div className="bg-card border border-border rounded-xl p-4 text-center">
+              <p className="text-muted-foreground text-sm">
+                Рекомендуем удобную закрытую обувь и&nbsp;одежду, в&nbsp;которой комфортно двигаться
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -288,7 +312,7 @@ function PerkCard({
         {icon}
       </div>
       <h3 className="font-display text-foreground uppercase text-sm">{title}</h3>
-      <p className="text-muted-foreground text-sm">{description}</p>
+      <p className="text-muted-foreground text-sm" dangerouslySetInnerHTML={{ __html: description }} />
     </div>
   );
 }
@@ -322,7 +346,7 @@ function ScheduleItem({
       <div className="flex-1">
         <p className="text-xs font-semibold text-muted-foreground tracking-wider uppercase">{time}</p>
         <h3 className="text-lg font-display text-foreground mt-1">{title}</h3>
-        {description && <p className="text-muted-foreground text-sm mt-1">{description}</p>}
+        {description && <p className="text-muted-foreground text-sm mt-1" dangerouslySetInnerHTML={{ __html: description }} />}
         {children}
       </div>
     </div>
