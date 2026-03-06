@@ -295,6 +295,7 @@ const Index = () => {
           </p>
         </div>
       </section>
+      <ScrollKart />
     </div>
   );
 };
