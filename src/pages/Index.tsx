@@ -18,7 +18,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground font-body">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-end overflow-hidden pb-12">
+      <section className="relative min-h-screen flex flex-col items-center justify-end overflow-hidden pb-12 pt-6 md:pt-8">
         <div className="absolute inset-0">
           <img src={heroImage} alt="Картинг-трасса" className="w-full h-full object-cover opacity-20 blur-sm scale-110" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background" />
