@@ -1,14 +1,14 @@
 import heroImage from "@/assets/hero-karting.jpg";
 import veronikaImage from "@/assets/veronika-racing.jpg";
-import { Phone, MapPin, Clock, Gift, Flag, Users, Coffee, CircleCheckBig, Camera, Pizza, Trophy, Send, MessageCircle } from "lucide-react";
+import { Phone, MapPin, Clock, Gift, Flag, Users, Coffee, CircleCheckBig, Camera, Pizza, Trophy, Send, MessageCircle, ExternalLink } from "lucide-react";
 import Countdown from "@/components/Countdown";
 import ScrollKart from "@/components/ScrollKart";
 
 const Index = () => {
   const handleAddToCalendar = () => {
     const title = "День рождения Вероники — 10 лет!";
-    const start = "20260522T130000Z"; // 16:00 MSK = 13:00 UTC
-    const end = "20260522T160000Z";   // 19:00 MSK = 16:00 UTC
+    const start = "20260522T130000Z";
+    const end = "20260522T160000Z";
     const location = "Картинг-центр Зеленокарт, ТРЦ Зеленопарк";
     const details = "Юбилей Вероники — 10 лет! Картинг, боулинг, пицца и веселье!";
     const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${start}/${end}&location=${encodeURIComponent(location)}&details=${encodeURIComponent(details)}`;
@@ -18,52 +18,52 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground font-body">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-end overflow-hidden pb-12 pt-6 md:pt-8">
+      <section className="relative min-h-screen flex flex-col items-center justify-end overflow-hidden pb-12 pt-4">
         <div className="absolute inset-0">
           <img src={heroImage} alt="Картинг-трасса" className="w-full h-full object-cover opacity-20 blur-sm scale-110" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background" />
         </div>
 
         <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-2xl mx-auto">
-          <p className="text-muted-foreground text-sm md:text-base mb-4">
+          <p className="text-muted-foreground text-xs md:text-sm mb-3">
             Вероника будет рада видеть вашего ребёнка на&nbsp;праздновании своего юбилея
           </p>
 
           <Countdown />
 
-          <div className="relative mb-6 mt-4 w-full max-w-xl">
+          <div className="relative mb-4 mt-3 w-full max-w-xl">
             <div className="absolute -inset-3 bg-primary/20 rounded-2xl blur-2xl animate-pulse-glow" />
             <div className="relative overflow-hidden rounded-2xl border-2 border-primary/50 shadow-[0_0_40px_hsl(120_100%_45%/0.3)]">
               <img
                 src={veronikaImage}
                 alt="Вероника — гонщица"
-                className="w-full aspect-[16/9] object-cover object-top"
+                className="w-full aspect-[16/9] object-cover object-center"
               />
             </div>
           </div>
 
-          <p className="text-primary font-display text-sm md:text-base tracking-[0.3em] uppercase animate-pulse-glow">
+          <p className="text-primary font-display text-xs md:text-sm tracking-[0.3em] uppercase animate-pulse-glow">
             Приглашение на день рождения
           </p>
 
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-display uppercase text-foreground text-glow leading-tight mt-3">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-display uppercase text-foreground text-glow leading-tight mt-2">
             Веронике
             <br />
-            <span className="text-primary">10</span> лет!
+            <span className="text-primary">10 лет!</span>
           </h1>
 
-          <div className="checkered-line w-48 mx-auto rounded-full mt-4" />
+          <div className="checkered-line w-48 mx-auto rounded-full mt-3" />
 
-          <p className="text-xl md:text-2xl font-body font-light text-muted-foreground mt-4">
-            Юбилей отмечаем на&nbsp;трассе{" "}
-            <span className="text-primary font-semibold">Зеленокарт</span>{" "}
+          <p className="text-lg md:text-xl font-body font-light text-muted-foreground mt-3">
+            Отмечаем на&nbsp;трассе{" "}
+            <a href="https://zelenokart.ru" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">Зеленокарт</a>{" "}
             в&nbsp;Зеленопарке
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4 text-lg md:text-xl pt-4">
+          <div className="flex flex-wrap items-center justify-center gap-3 text-base md:text-lg pt-3">
             <button
               onClick={handleAddToCalendar}
-              className="flex flex-col items-center gap-1 bg-secondary px-4 py-2 rounded-lg border border-border hover:border-primary transition-colors cursor-pointer"
+              className="flex-1 min-w-0 flex flex-col items-center gap-1 bg-secondary px-4 py-2 rounded-lg border border-border hover:border-primary transition-colors cursor-pointer"
               title="Добавить в календарь"
             >
               <span className="flex items-center gap-2">
@@ -72,10 +72,21 @@ const Index = () => {
               </span>
               <span className="text-xs text-muted-foreground">Нажмите, чтобы добавить в&nbsp;календарь</span>
             </button>
-            <span className="flex items-center gap-2 bg-secondary px-4 py-2 rounded-lg border border-border">
-              <MapPin className="w-5 h-5 text-primary" />
-              Зеленопарк, Зеленокарт
-            </span>
+            <div className="flex-1 min-w-0 flex flex-col items-center gap-1 bg-secondary px-4 py-2 rounded-lg border border-border">
+              <span className="flex items-center gap-2">
+                <MapPin className="w-5 h-5 text-primary" />
+                Зеленопарк, <a href="https://zelenokart.ru" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Зеленокарт</a>
+              </span>
+              <a
+                href="https://yandex.ru/maps/org/zelenokart/147521538181/?ll=37.258687%2C55.999221&z=16"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-primary hover:underline flex items-center gap-1"
+              >
+                Проложить маршрут
+                <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
           </div>
         </div>
 
@@ -92,8 +103,8 @@ const Index = () => {
           <h2 className="text-3xl md:text-4xl font-display text-center uppercase mb-12 text-glow text-primary">
             Что вас ждёт
           </h2>
-          <div className="space-y-6">
-            <div className="grid grid-cols-2 gap-6">
+          <div className="space-y-4">
+            <div className="grid grid-cols-2 gap-4">
               <PerkCard
                 icon={<Pizza className="w-8 h-8" />}
                 title="Вкусная еда"
@@ -102,7 +113,7 @@ const Index = () => {
               <PerkCard
                 icon={<Camera className="w-8 h-8" />}
                 title="Фотограф"
-                description="Профессиональные фотографии мероприятия&nbsp;— заберёте на&nbsp;память!"
+                description="Профессиональные фотографии мероприятия&nbsp;— для тёплых воспоминаний!"
               />
             </div>
             <div className="grid grid-cols-1 max-w-sm mx-auto">
@@ -112,11 +123,11 @@ const Index = () => {
                 description="Тренировка, квалификация и&nbsp;финальная гонка на&nbsp;20&nbsp;кругов!"
               />
             </div>
-            <div className="grid grid-cols-2 gap-6">
+            <div className="grid grid-cols-2 gap-4">
               <PerkCard
                 icon={<Trophy className="w-8 h-8" />}
                 title="Награждение"
-                description="Церемония на&nbsp;пьедестале с&nbsp;медалями и&nbsp;шампанским!"
+                description="На&nbsp;пьедестале с&nbsp;медалями и&nbsp;детским шампанским!"
               />
               <PerkCard
                 icon={<Users className="w-8 h-8" />}
@@ -132,7 +143,7 @@ const Index = () => {
       <section className="py-16 md:py-24 px-4">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-display text-center uppercase mb-12 text-glow text-primary">
-            Программа дня
+            Программа
           </h2>
 
           <div className="space-y-4">
@@ -160,7 +171,7 @@ const Index = () => {
                 <RaceStep num={2} title="Квалификационный заезд" detail="10 минут" />
                 <RaceStep num={3} title="Перерыв" detail="10–15 минут" />
                 <RaceStep num={4} title="Гонка" detail="20 кругов" />
-                <RaceStep num={5} title="Награждение на пьедестале" detail="Медали и шампанское" icon={<Trophy className="w-4 h-4" />} />
+                <RaceStep num={5} title="Награждение на пьедестале" detail="Медали и детское шампанское" icon={<Trophy className="w-4 h-4" />} />
               </div>
             </ScheduleItem>
             <ScheduleItem
@@ -183,12 +194,12 @@ const Index = () => {
 
       {/* Important Info */}
       <section className="py-16 px-4 bg-secondary/50">
-        <div className="max-w-3xl mx-auto space-y-8">
+        <div className="max-w-3xl mx-auto space-y-6">
           <h2 className="text-3xl md:text-4xl font-display text-center uppercase mb-8 text-primary text-glow">
             Важная информация
           </h2>
 
-          <div className="space-y-6">
+          <div className="space-y-4">
             {/* Время */}
             <div className="bg-card border border-border rounded-xl p-6 space-y-4">
               <div className="flex items-center justify-center gap-2">
@@ -213,7 +224,17 @@ const Index = () => {
                 <MapPin className="w-8 h-8 text-primary" />
               </div>
               <h3 className="font-display text-foreground uppercase">Место</h3>
-              <p className="text-muted-foreground text-sm">Картинг-центр Зеленокарт</p>
+              <p className="text-muted-foreground text-sm">
+                Картинг-центр{" "}
+                <a
+                  href="https://yandex.ru/maps/org/zelenokart/147521538181/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary underline underline-offset-2 hover:no-underline"
+                >
+                  Зеленокарт
+                </a>
+              </p>
               <p className="text-muted-foreground text-sm">ТРЦ Зеленопарк</p>
             </div>
 
@@ -234,17 +255,33 @@ const Index = () => {
             </div>
 
             {/* Подтверждение */}
-            <div className="bg-card border border-border rounded-xl p-6 text-center space-y-3">
+            <div className="bg-card border-2 border-primary rounded-xl p-6 text-center space-y-3">
               <div className="flex justify-center">
                 <CircleCheckBig className="w-8 h-8 text-primary" />
               </div>
               <h3 className="font-display text-foreground uppercase">Подтверждение</h3>
-              <p className="text-muted-foreground text-sm">Просьба подтвердить присутствие</p>
-              <p className="text-muted-foreground text-sm">по&nbsp;контактам ниже не&nbsp;позже 13&nbsp;марта 2026</p>
+              <p className="text-muted-foreground text-sm">
+                Вступите в&nbsp;
+                <a
+                  href="https://max.ru/join/fvYhg9ejz4JNS1XciWLT7dmvyJha0WX3TQb5bXhL8c0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary underline underline-offset-2 hover:no-underline font-semibold"
+                >
+                  группу MAX
+                </a>
+                {" "}для удобной коммуникации
+              </p>
+              <p className="text-muted-foreground text-sm">
+                и&nbsp;напишите приветственное сообщение с&nbsp;вашим ФИО
+              </p>
+              <p className="text-muted-foreground text-xs italic mt-1">
+                Крайний срок&nbsp;— 13&nbsp;марта 2026
+              </p>
             </div>
 
             {/* Рекомендация по одежде */}
-            <div className="bg-card border border-border rounded-xl p-4 text-center">
+            <div className="bg-card rounded-xl p-4 text-center">
               <p className="text-muted-foreground text-sm">
                 Рекомендуем удобную закрытую обувь и&nbsp;одежду, в&nbsp;которой комфортно двигаться
               </p>
@@ -281,7 +318,7 @@ const Index = () => {
             </a>
 
             <a
-              href="https://max.ru/call/+79067302360"
+              href="https://max.ru/u/f9LHodD0cOIbjeKtLjeAgP154RXzocE9qsgWBT8j5L24qx4s_HE9z6cQkXk"
               target="_blank"
               rel="noopener noreferrer"
               className="flex flex-col items-center gap-2 bg-card border border-border p-4 rounded-xl hover:border-primary transition-colors group"

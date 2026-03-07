@@ -51,11 +51,11 @@ export default function ScrollKart() {
         ))}
       </div>
 
-      {/* Go-kart SVG */}
+      {/* Top-view go-kart SVG */}
       <svg
-        width="40"
-        height="24"
-        viewBox="0 0 40 24"
+        width="36"
+        height="48"
+        viewBox="0 0 36 48"
         fill="none"
         className="text-primary drop-shadow-[0_0_6px_hsl(120_100%_45%/0.5)]"
         style={{
@@ -63,28 +63,30 @@ export default function ScrollKart() {
           transition: "transform 0.3s ease",
         }}
       >
-        {/* Chassis */}
-        <rect x="6" y="8" width="28" height="7" rx="3" fill="currentColor" opacity="0.85" />
-        {/* Front spoiler */}
-        <rect x="30" y="10" width="8" height="3" rx="1" fill="currentColor" opacity="0.6" />
-        {/* Rear wing */}
-        <rect x="2" y="7" width="6" height="2" rx="1" fill="currentColor" opacity="0.7" />
-        {/* Driver helmet */}
-        <circle cx="18" cy="7" r="4" fill="currentColor" opacity="0.7" />
-        <path d="M15 7 Q18 3 21 7" fill="currentColor" opacity="0.9" />
+        {/* Body */}
+        <rect x="10" y="8" width="16" height="32" rx="4" fill="currentColor" opacity="0.8" />
+        {/* Nose */}
+        <path d="M14 8 L18 2 L22 8" fill="currentColor" opacity="0.9" />
+        {/* Rear */}
+        <rect x="12" y="38" width="12" height="4" rx="2" fill="currentColor" opacity="0.7" />
+        {/* Front left wheel */}
+        <rect x="3" y="6" width="6" height="12" rx="3" fill="currentColor" />
+        {/* Front right wheel */}
+        <rect x="27" y="6" width="6" height="12" rx="3" fill="currentColor" />
+        {/* Rear left wheel */}
+        <rect x="3" y="32" width="6" height="12" rx="3" fill="currentColor" />
+        {/* Rear right wheel */}
+        <rect x="27" y="32" width="6" height="12" rx="3" fill="currentColor" />
+        {/* Front axle */}
+        <rect x="6" y="11" width="24" height="2" rx="1" fill="currentColor" opacity="0.5" />
+        {/* Rear axle */}
+        <rect x="6" y="37" width="24" height="2" rx="1" fill="currentColor" opacity="0.5" />
+        {/* Steering column */}
+        <rect x="16" y="14" width="4" height="6" rx="1" fill="hsl(120 10% 5%)" opacity="0.4" />
         {/* Steering wheel */}
-        <rect x="22" y="9" width="4" height="1.5" rx="0.5" fill="hsl(120 10% 5%)" opacity="0.5" />
-        {/* Rear wheels */}
-        <ellipse cx="9" cy="18" rx="4" ry="3.5" fill="currentColor" />
-        <ellipse cx="9" cy="18" rx="2.5" ry="2" fill="hsl(120 10% 5%)" opacity="0.4" />
-        {/* Front wheels */}
-        <ellipse cx="31" cy="18" rx="4" ry="3.5" fill="currentColor" />
-        <ellipse cx="31" cy="18" rx="2.5" ry="2" fill="hsl(120 10% 5%)" opacity="0.4" />
-        {/* Axles */}
-        <rect x="5" y="15" width="8" height="1" rx="0.5" fill="currentColor" opacity="0.4" />
-        <rect x="27" y="15" width="8" height="1" rx="0.5" fill="currentColor" opacity="0.4" />
-        {/* Number */}
-        <text x="16" y="14" fontSize="5" fontWeight="bold" fill="hsl(120 10% 5%)" opacity="0.6">10</text>
+        <ellipse cx="18" cy="14" rx="4" ry="2" fill="currentColor" opacity="0.6" />
+        {/* Number plate */}
+        <text x="18" y="32" fontSize="7" fontWeight="bold" fill="hsl(120 10% 5%)" opacity="0.5" textAnchor="middle">10</text>
       </svg>
     </div>
   );
