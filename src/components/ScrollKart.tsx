@@ -59,7 +59,7 @@ export default function ScrollKart() {
         fill="none"
         className="text-primary drop-shadow-[0_0_6px_hsl(120_100%_45%/0.5)]"
         style={{
-          transform: direction === "up" ? "rotate(180deg)" : "rotate(0deg)",
+          transform: direction === "down" ? "rotate(180deg)" : "rotate(0deg)",
           transition: "transform 0.3s ease",
         }}
       >
