@@ -30,7 +30,6 @@ const Index = () => {
             <br />
             на&nbsp;праздновании своего юбилея
           </p>
-          </p>
 
           <Countdown />
 
