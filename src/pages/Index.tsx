@@ -63,10 +63,10 @@ const Index = () => {
             в&nbsp;Зеленопарке
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-3 text-base md:text-lg pt-3">
+          <div className="flex flex-col items-center gap-3 text-base md:text-lg pt-3 w-full max-w-sm mx-auto">
             <button
               onClick={handleAddToCalendar}
-              className="flex-1 min-w-0 flex flex-col items-center gap-1 bg-secondary px-4 py-2 rounded-lg border border-border hover:border-primary transition-colors cursor-pointer"
+              className="w-full flex flex-col items-center gap-1 bg-secondary px-4 py-3 rounded-lg border border-border hover:border-primary transition-colors cursor-pointer"
               title="Добавить в календарь"
             >
               <span className="flex items-center gap-2">
@@ -75,7 +75,7 @@ const Index = () => {
               </span>
               <span className="text-xs text-muted-foreground">Нажмите, чтобы добавить в&nbsp;календарь</span>
             </button>
-            <div className="flex-1 min-w-0 flex flex-col items-center gap-1 bg-secondary px-4 py-2 rounded-lg border border-border">
+            <div className="w-full flex flex-col items-center gap-1 bg-secondary px-4 py-3 rounded-lg border border-border">
               <span className="flex items-center gap-2">
                 <MapPin className="w-5 h-5 text-primary" />
                 Зеленопарк, <a href="https://zelenokart.ru" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Зеленокарт</a>
