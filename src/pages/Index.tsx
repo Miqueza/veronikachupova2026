@@ -26,7 +26,10 @@ const Index = () => {
 
         <div className="relative z-10 flex flex-col items-center text-center px-4 max-w-2xl mx-auto">
           <p className="text-muted-foreground text-xs md:text-sm mb-3">
-            Вероника будет рада видеть вашего ребёнка на&nbsp;праздновании своего юбилея
+            Вероника будет рада видеть вашего ребёнка
+            <br />
+            на&nbsp;праздновании своего юбилея
+          </p>
           </p>
 
           <Countdown />
