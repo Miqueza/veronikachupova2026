@@ -179,7 +179,7 @@ const Index = () => {
             </ScheduleItem>
             <ScheduleItem
               time="18:00–19:00"
-              icon={<Users className="w-6 h-6" />}
+              icon={<BowlingIcon className="w-6 h-6" />}
               title="Боулинг и пицца"
               description="Переходим в&nbsp;зону боулинга&nbsp;— 2&nbsp;дорожки, пицца и&nbsp;веселье! В&nbsp;ожидании своего броска можно перекусить"
             />
