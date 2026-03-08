@@ -18,7 +18,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground font-body">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex flex-col items-center justify-end overflow-hidden pb-12 pt-4">
+      <section className="relative min-h-screen flex flex-col items-center justify-end overflow-hidden pb-12 pt-12">
         <div className="absolute inset-0">
           <img src={heroImage} alt="Картинг-трасса" className="w-full h-full object-cover opacity-20 blur-sm scale-110" />
           <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/50 to-background" />
@@ -39,7 +39,7 @@ const Index = () => {
               <img
                 src={veronikaImage}
                 alt="Вероника — гонщица"
-                className="w-full aspect-[16/9] object-cover"
+                className="w-full aspect-[16/9] object-cover scale-[1.2]"
                 style={{ objectPosition: "center 30%" }}
               />
             </div>
@@ -262,7 +262,7 @@ const Index = () => {
               <div className="flex justify-center">
                 <CircleCheckBig className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="font-display text-foreground uppercase">Подтверждение</h3>
+              <h3 className="font-display text-foreground uppercase">Подтвердить присутствие</h3>
               <p className="text-muted-foreground text-sm">
                 Вступите в&nbsp;
                 <a
