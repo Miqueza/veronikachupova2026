@@ -51,8 +51,7 @@ const Index = () => {
               <img
                 src={veronikaImage}
                 alt="Вероника — гонщица"
-                className="w-full aspect-[16/9] object-cover scale-[1.3]"
-                style={{ objectPosition: "center 10%" }}
+                className="w-full aspect-[16/9] object-cover"
               />
             </div>
           </div>
@@ -273,29 +272,45 @@ const Index = () => {
             </div>
 
             {/* Подтверждение */}
-            <div className="bg-card border-2 border-primary rounded-xl p-6 text-center space-y-3">
+            <div className="bg-card border-2 border-primary rounded-xl p-6 text-center space-y-4">
               <div className="flex justify-center">
                 <CircleCheckBig className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="font-display text-foreground uppercase">Подтвердите присутствие</h3>
-              <p className="text-muted-foreground text-sm">
-                Вступите в&nbsp;
-                <a
-                  href="https://max.ru/join/fvYhg9ejz4JNS1XciWLT7dmvyJha0WX3TQb5bXhL8c0"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-primary underline underline-offset-2 hover:no-underline font-semibold"
-                >
-                  группу MAX
-                </a>
-                {" "}для удобной коммуникации
-              </p>
-              <p className="text-muted-foreground text-sm">
-                и&nbsp;напишите приветственное сообщение с&nbsp;вашим ФИО
-              </p>
-              <p className="text-muted-foreground text-xs italic mt-1">
-                Крайний срок&nbsp;— 13&nbsp;марта 2026
-              </p>
+              <h3 className="font-display text-foreground uppercase text-lg">Подтвердите присутствие</h3>
+              <div className="space-y-2">
+                <p className="text-muted-foreground text-sm">
+                  Пожалуйста, подтвердите до&nbsp;<span className="text-primary font-semibold">13&nbsp;марта&nbsp;2026</span>
+                </p>
+              </div>
+              <div className="bg-secondary/50 rounded-lg p-4 space-y-2">
+                <p className="text-foreground text-sm font-semibold">Как подтвердить:</p>
+                <div className="flex items-start gap-2 text-left">
+                  <span className="text-primary font-display text-sm mt-0.5">1.</span>
+                  <p className="text-muted-foreground text-sm">
+                    Вступите в&nbsp;
+                    <a
+                      href="https://max.ru/join/fvYhg9ejz4JNS1XciWLT7dmvyJha0WX3TQb5bXhL8c0"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary underline underline-offset-2 hover:no-underline font-semibold"
+                    >
+                      группу MAX
+                    </a>
+                  </p>
+                </div>
+                <div className="flex items-start gap-2 text-left">
+                  <span className="text-primary font-display text-sm mt-0.5">2.</span>
+                  <p className="text-muted-foreground text-sm">Напишите приветственное сообщение с&nbsp;ФИО ребёнка</p>
+                </div>
+              </div>
+              <a
+                href="https://max.ru/join/fvYhg9ejz4JNS1XciWLT7dmvyJha0WX3TQb5bXhL8c0"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block px-6 py-3 bg-primary text-primary-foreground font-display text-sm uppercase rounded-lg hover:opacity-90 transition-opacity"
+              >
+                Вступить в группу
+              </a>
             </div>
 
             {/* Рекомендация по одежде */}
