@@ -152,7 +152,7 @@ const Index = () => {
           <div className="space-y-4">
             <ScheduleItem
               time="16:00–16:30"
-              icon={<Coffee className="w-6 h-6" />}
+              icon={<Apple className="w-6 h-6" />}
               title="Сбор и лёгкий фуршет"
               description="Фрукты, овощи, перекусы и&nbsp;напитки. Встречаемся и&nbsp;настраиваемся на&nbsp;гонку!"
             />
