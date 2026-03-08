@@ -4,6 +4,19 @@ import { Phone, MapPin, Clock, Gift, Flag, Users, Apple, CircleCheckBig, Camera,
 import Countdown from "@/components/Countdown";
 import ScrollKart from "@/components/ScrollKart";
 
+function BowlingIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="18" r="5" />
+      <circle cx="12" cy="16.5" r="0.5" fill="currentColor" stroke="none" />
+      <circle cx="10.5" cy="18" r="0.5" fill="currentColor" stroke="none" />
+      <circle cx="13.5" cy="18" r="0.5" fill="currentColor" stroke="none" />
+      <path d="M7 2 L5 11 M9 2 L8 11 M11 2 L10 11" />
+      <line x1="6" y1="2" x2="12" y2="2" />
+    </svg>
+  );
+}
+
 const Index = () => {
   const handleAddToCalendar = () => {
     const title = "День рождения Вероники — 10 лет!";
