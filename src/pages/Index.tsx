@@ -51,7 +51,8 @@ const Index = () => {
               <img
                 src={veronikaImage}
                 alt="Вероника — гонщица"
-                className="w-full aspect-[16/9] object-cover"
+                className="w-full aspect-[16/9] object-cover scale-[1.3]"
+                style={{ objectPosition: "center 10%" }}
               />
             </div>
           </div>
@@ -300,7 +301,7 @@ const Index = () => {
                 </div>
                 <div className="flex items-start gap-2 text-left">
                   <span className="text-primary font-display text-sm mt-0.5">2.</span>
-                  <p className="text-muted-foreground text-sm">Напишите приветственное сообщение с&nbsp;ФИО ребёнка</p>
+                  <p className="text-muted-foreground text-sm">Напишите приветственное сообщение с&nbsp;вашим ФИО</p>
                 </div>
               </div>
               <a
