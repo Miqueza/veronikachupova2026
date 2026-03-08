@@ -39,7 +39,7 @@ const Index = () => {
               <img
                 src={veronikaImage}
                 alt="Вероника — гонщица"
-                className="w-full aspect-[16/9] object-cover"
+                className="w-full aspect-[16/9] object-cover scale-[1.2]"
                 style={{ objectPosition: "center 30%" }}
               />
             </div>
