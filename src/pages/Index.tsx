@@ -1,8 +1,21 @@
 import heroImage from "@/assets/hero-karting.jpg";
 import veronikaImage from "@/assets/veronika-racing.jpg";
-import { Phone, MapPin, Clock, Gift, Flag, Users, Coffee, CircleCheckBig, Camera, Pizza, Trophy, Send, MessageCircle, ExternalLink } from "lucide-react";
+import { Phone, MapPin, Clock, Gift, Flag, Users, Apple, CircleCheckBig, Camera, Pizza, Trophy, Send, MessageCircle, ExternalLink } from "lucide-react";
 import Countdown from "@/components/Countdown";
 import ScrollKart from "@/components/ScrollKart";
+
+function BowlingIcon({ className }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="18" r="5" />
+      <circle cx="12" cy="16.5" r="0.5" fill="currentColor" stroke="none" />
+      <circle cx="10.5" cy="18" r="0.5" fill="currentColor" stroke="none" />
+      <circle cx="13.5" cy="18" r="0.5" fill="currentColor" stroke="none" />
+      <path d="M7 2 L5 11 M9 2 L8 11 M11 2 L10 11" />
+      <line x1="6" y1="2" x2="12" y2="2" />
+    </svg>
+  );
+}
 
 const Index = () => {
   const handleAddToCalendar = () => {
@@ -133,7 +146,7 @@ const Index = () => {
                 description="На&nbsp;пьедестале с&nbsp;медалями и&nbsp;детским шампанским!"
               />
               <PerkCard
-                icon={<Users className="w-8 h-8" />}
+                icon={<BowlingIcon className="w-8 h-8" />}
                 title="Боулинг"
                 description="После гонок&nbsp;— 2&nbsp;дорожки боулинга и&nbsp;веселье на&nbsp;целый час!"
               />
@@ -152,7 +165,7 @@ const Index = () => {
           <div className="space-y-4">
             <ScheduleItem
               time="16:00–16:30"
-              icon={<Coffee className="w-6 h-6" />}
+              icon={<Apple className="w-6 h-6" />}
               title="Сбор и лёгкий фуршет"
               description="Фрукты, овощи, перекусы и&nbsp;напитки. Встречаемся и&nbsp;настраиваемся на&nbsp;гонку!"
             />
@@ -179,7 +192,7 @@ const Index = () => {
             </ScheduleItem>
             <ScheduleItem
               time="18:00–19:00"
-              icon={<Users className="w-6 h-6" />}
+              icon={<BowlingIcon className="w-6 h-6" />}
               title="Боулинг и пицца"
               description="Переходим в&nbsp;зону боулинга&nbsp;— 2&nbsp;дорожки, пицца и&nbsp;веселье! В&nbsp;ожидании своего броска можно перекусить"
             />
