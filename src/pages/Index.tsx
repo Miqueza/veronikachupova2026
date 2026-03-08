@@ -133,7 +133,7 @@ const Index = () => {
                 description="На&nbsp;пьедестале с&nbsp;медалями и&nbsp;детским шампанским!"
               />
               <PerkCard
-                icon={<Users className="w-8 h-8" />}
+                icon={<BowlingIcon className="w-8 h-8" />}
                 title="Боулинг"
                 description="После гонок&nbsp;— 2&nbsp;дорожки боулинга и&nbsp;веселье на&nbsp;целый час!"
               />
