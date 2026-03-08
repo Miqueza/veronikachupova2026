@@ -262,8 +262,7 @@ const Index = () => {
                 <Gift className="w-8 h-8 text-primary" />
               </div>
               <h3 className="font-display text-foreground uppercase">Подарки</h3>
-              <p className="text-muted-foreground text-sm">Вишлист Вероники&nbsp;— выберите</p>
-              <p className="text-muted-foreground text-sm">и&nbsp;забронируйте подарок</p>
+              <p className="text-muted-foreground text-sm">Вишлист Вероники&nbsp;— выберите и&nbsp;забронируйте подарок</p>
               <a
                 href="#"
                 className="inline-block mt-3 px-5 py-2 bg-primary text-primary-foreground font-display text-sm uppercase rounded-lg hover:opacity-90 transition-opacity"
