@@ -251,6 +251,9 @@ const Index = () => {
                 </a>
               </p>
               <p className="text-muted-foreground text-sm">ТРЦ Зеленопарк</p>
+              <div className="overflow-hidden rounded-lg mt-2">
+                <img src={venueImage} alt="Зеленокарт — картинг и боулинг" className="w-full h-40 object-cover" />
+              </div>
             </div>
 
             {/* Подарки */}
