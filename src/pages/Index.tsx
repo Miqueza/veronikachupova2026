@@ -1,5 +1,6 @@
 import heroImage from "@/assets/hero-karting.jpg";
 import veronikaImage from "@/assets/veronika-racing.jpg";
+import venueImage from "@/assets/venue-photo.jpg";
 import { Phone, MapPin, Clock, Gift, Flag, Users, Apple, CircleCheckBig, Camera, Pizza, Trophy, Send, MessageCircle, ExternalLink } from "lucide-react";
 import Countdown from "@/components/Countdown";
 import ScrollKart from "@/components/ScrollKart";
