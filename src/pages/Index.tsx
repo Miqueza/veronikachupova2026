@@ -262,7 +262,7 @@ const Index = () => {
               <div className="flex justify-center">
                 <CircleCheckBig className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="font-display text-foreground uppercase">Подтверждение</h3>
+              <h3 className="font-display text-foreground uppercase">Подтвердить присутствие</h3>
               <p className="text-muted-foreground text-sm">
                 Вступите в&nbsp;
                 <a
