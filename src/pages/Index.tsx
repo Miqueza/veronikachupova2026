@@ -1,5 +1,6 @@
 import heroImage from "@/assets/hero-karting.jpg";
 import veronikaImage from "@/assets/veronika-racing.jpg";
+import venueImage from "@/assets/venue-photo.jpg";
 import { Phone, MapPin, Clock, Gift, Flag, Users, Apple, CircleCheckBig, Camera, Pizza, Trophy, Send, MessageCircle, ExternalLink } from "lucide-react";
 import Countdown from "@/components/Countdown";
 import ScrollKart from "@/components/ScrollKart";
@@ -250,6 +251,9 @@ const Index = () => {
                 </a>
               </p>
               <p className="text-muted-foreground text-sm">ТРЦ Зеленопарк</p>
+              <div className="overflow-hidden rounded-lg mt-2">
+                <img src={venueImage} alt="Зеленокарт — картинг и боулинг" className="w-full h-40 object-cover" />
+              </div>
             </div>
 
             {/* Подарки */}
@@ -273,7 +277,7 @@ const Index = () => {
               <div className="flex justify-center">
                 <CircleCheckBig className="w-8 h-8 text-primary" />
               </div>
-              <h3 className="font-display text-foreground uppercase">Подтвердить присутствие</h3>
+              <h3 className="font-display text-foreground uppercase">Подтвердите присутствие</h3>
               <p className="text-muted-foreground text-sm">
                 Вступите в&nbsp;
                 <a
