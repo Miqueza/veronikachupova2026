@@ -50,7 +50,7 @@ const Index = () => {
             <div className="absolute -inset-3 bg-primary/20 rounded-2xl blur-2xl animate-pulse-glow" />
             <div className="relative overflow-hidden rounded-2xl border-2 border-primary/50 shadow-[0_0_40px_hsl(120_100%_45%/0.3)]">
               <img
-                src={veronikaImage}
+                src={veronikaPhoto}
                 alt="Вероника — гонщица"
                 className="w-full aspect-[16/9] object-cover"
               />
@@ -262,13 +262,9 @@ const Index = () => {
                 <Gift className="w-8 h-8 text-primary" />
               </div>
               <h3 className="font-display text-foreground uppercase">Подарки</h3>
-              <p className="text-muted-foreground text-sm">Вишлист Вероники&nbsp;— выберите и&nbsp;забронируйте подарок</p>
-              <a
-                href="#"
-                className="inline-block mt-3 px-5 py-2 bg-primary text-primary-foreground font-display text-sm uppercase rounded-lg hover:opacity-90 transition-opacity"
-              >
-                Открыть вишлист
-              </a>
+              <p className="text-muted-foreground text-sm">
+                Если желаете подарить мне подарок, то лучше всего это сделать деньгами, потому что я&nbsp;коплю на&nbsp;новый телефон&nbsp;❤️
+              </p>
             </div>
 
             {/* Подтверждение */}
