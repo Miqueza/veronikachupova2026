@@ -71,7 +71,7 @@ const Index = () => {
 
           <p className="text-lg md:text-xl font-body font-light text-muted-foreground mt-3">
             Отмечаем на&nbsp;трассе{" "}
-            <a href="https://zelenokart.ru" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">Зеленокарт</a>{" "}
+            <span className="text-primary font-semibold">Зеленокарт</span>{" "}
             в&nbsp;Зеленопарке
           </p>
 
