@@ -249,24 +249,27 @@ const Index = () => {
             </div>
 
             {/* Место */}
-            <div className="bg-card border border-border rounded-xl p-6 text-center space-y-3">
-              <div className="flex justify-center">
-                <MapPin className="w-8 h-8 text-primary" />
+            <div className="bg-card border border-border rounded-xl p-6 space-y-4">
+              <div className="flex items-center justify-center gap-2">
+                <MapPin className="w-6 h-6 text-primary" />
+                <h3 className="font-display text-foreground uppercase text-lg">Место</h3>
               </div>
-              <h3 className="font-display text-foreground uppercase">Место</h3>
-              <p className="text-muted-foreground text-sm">
-                Картинг-центр{" "}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-secondary border border-border rounded-xl p-5 text-center space-y-2">
+                  <p className="text-primary font-display text-lg">Зеленопарк</p>
+                  <p className="text-muted-foreground text-sm">Картинг-центр Зеленокарт</p>
+                </div>
                 <a
-                  href="https://yandex.ru/maps/org/zelenokart/147521538181/"
+                  href="https://yandex.ru/maps/org/zelenokart/147521538181/?ll=37.258687%2C55.999221&z=16"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary underline underline-offset-2 hover:no-underline"
+                  className="bg-secondary border border-border rounded-xl p-5 text-center space-y-2 hover:border-primary transition-colors"
                 >
-                  Зеленокарт
+                  <Navigation className="w-6 h-6 text-primary mx-auto" />
+                  <p className="text-muted-foreground text-sm">Проложить маршрут</p>
                 </a>
-              </p>
-              <p className="text-muted-foreground text-sm">ТРЦ Зеленопарк</p>
-              <div className="overflow-hidden rounded-lg mt-2">
+              </div>
+              <div className="overflow-hidden rounded-lg">
                 <img src={venueImage} alt="Зеленокарт — картинг и боулинг" className="w-full h-40 object-cover" />
               </div>
             </div>
