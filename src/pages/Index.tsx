@@ -1,7 +1,8 @@
 import heroImage from "@/assets/hero-karting.jpg";
-import veronikaImage from "@/assets/veronika-racing.jpg";
+import veronikaPhoto from "@/assets/veronika-photo.jpg";
+
 import venueImage from "@/assets/venue-photo.jpg";
-import { Phone, MapPin, Clock, Gift, Flag, Users, Apple, CircleCheckBig, Camera, Pizza, Trophy, Send, MessageCircle, ExternalLink } from "lucide-react";
+import { Phone, MapPin, Clock, Gift, Flag, Users, Apple, CircleCheckBig, Camera, Pizza, Trophy, Send, MessageCircle, ExternalLink, CalendarPlus, Navigation } from "lucide-react";
 import Countdown from "@/components/Countdown";
 import ScrollKart from "@/components/ScrollKart";
 
@@ -49,7 +50,7 @@ const Index = () => {
             <div className="absolute -inset-3 bg-primary/20 rounded-2xl blur-2xl animate-pulse-glow" />
             <div className="relative overflow-hidden rounded-2xl border-2 border-primary/50 shadow-[0_0_40px_hsl(120_100%_45%/0.3)]">
               <img
-                src={veronikaImage}
+                src={veronikaPhoto}
                 alt="Вероника — гонщица"
                 className="w-full aspect-[16/9] object-cover"
               />
@@ -70,35 +71,50 @@ const Index = () => {
 
           <p className="text-lg md:text-xl font-body font-light text-muted-foreground mt-3">
             Отмечаем на&nbsp;трассе{" "}
-            <a href="https://zelenokart.ru" target="_blank" rel="noopener noreferrer" className="text-primary font-semibold hover:underline">Зеленокарт</a>{" "}
+            <span className="text-primary font-semibold">Зеленокарт</span>{" "}
             в&nbsp;Зеленопарке
           </p>
 
           <div className="flex flex-col items-center gap-3 text-base md:text-lg pt-3 w-full max-w-sm mx-auto">
-            <button
-              onClick={handleAddToCalendar}
-              className="w-full flex flex-col items-center gap-1 bg-secondary px-4 py-3 rounded-lg border border-border hover:border-primary transition-colors cursor-pointer"
-              title="Добавить в календарь"
-            >
-              <span className="flex items-center gap-2">
-                <Clock className="w-5 h-5 text-primary" />
-                22 мая 2026, 16:00
-              </span>
-              <span className="text-xs text-muted-foreground">Нажмите, чтобы добавить в&nbsp;календарь</span>
-            </button>
-            <div className="w-full flex flex-col items-center gap-1 bg-secondary px-4 py-3 rounded-lg border border-border">
-              <span className="flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-primary" />
-                Зеленопарк, <a href="https://zelenokart.ru" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Зеленокарт</a>
-              </span>
+            <div className="grid grid-cols-2 gap-3 w-full">
+              <div className="flex flex-col items-center gap-1 bg-secondary px-3 py-3 rounded-lg border border-border">
+                <span className="flex items-center gap-2">
+                  <Clock className="w-5 h-5 text-primary" />
+                  <span className="text-sm">22 мая, 16:00</span>
+                </span>
+                <span className="text-[10px] text-muted-foreground text-center leading-tight">Не&nbsp;опаздывайте, лучше приехать заранее</span>
+              </div>
+              <button
+                onClick={handleAddToCalendar}
+                className="flex flex-col items-center gap-1 bg-secondary px-3 py-3 rounded-lg border border-border hover:border-primary transition-colors cursor-pointer"
+                title="Добавить в календарь"
+              >
+                <span className="flex items-center gap-2">
+                  <CalendarPlus className="w-5 h-5 text-primary" />
+                  <span className="text-sm">Добавить</span>
+                </span>
+                <span className="text-[10px] text-muted-foreground">в&nbsp;календарь</span>
+              </button>
+            </div>
+            <div className="grid grid-cols-2 gap-3 w-full">
+              <div className="flex flex-col items-center gap-1 bg-secondary px-3 py-3 rounded-lg border border-border">
+                <span className="flex items-center gap-2">
+                  <MapPin className="w-5 h-5 text-primary" />
+                  <span className="text-sm">Зеленопарк</span>
+                </span>
+                <span className="text-[10px] text-muted-foreground">Картинг-центр Зеленокарт</span>
+              </div>
               <a
                 href="https://yandex.ru/maps/org/zelenokart/147521538181/?ll=37.258687%2C55.999221&z=16"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-primary hover:underline flex items-center gap-1"
+                className="flex flex-col items-center gap-1 bg-secondary px-3 py-3 rounded-lg border border-border hover:border-primary transition-colors"
               >
-                Проложить маршрут
-                <ExternalLink className="w-3 h-3" />
+                <span className="flex items-center gap-2">
+                  <Navigation className="w-5 h-5 text-primary" />
+                  <span className="text-sm">Маршрут</span>
+                </span>
+                <span className="text-[10px] text-muted-foreground">Проложить путь</span>
               </a>
             </div>
           </div>
@@ -233,24 +249,27 @@ const Index = () => {
             </div>
 
             {/* Место */}
-            <div className="bg-card border border-border rounded-xl p-6 text-center space-y-3">
-              <div className="flex justify-center">
-                <MapPin className="w-8 h-8 text-primary" />
+            <div className="bg-card border border-border rounded-xl p-6 space-y-4">
+              <div className="flex items-center justify-center gap-2">
+                <MapPin className="w-6 h-6 text-primary" />
+                <h3 className="font-display text-foreground uppercase text-lg">Место</h3>
               </div>
-              <h3 className="font-display text-foreground uppercase">Место</h3>
-              <p className="text-muted-foreground text-sm">
-                Картинг-центр{" "}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-secondary border border-border rounded-xl p-5 text-center space-y-2">
+                  <p className="text-primary font-display text-lg">Зеленопарк</p>
+                  <p className="text-muted-foreground text-sm">Картинг-центр Зеленокарт</p>
+                </div>
                 <a
-                  href="https://yandex.ru/maps/org/zelenokart/147521538181/"
+                  href="https://yandex.ru/maps/org/zelenokart/147521538181/?ll=37.258687%2C55.999221&z=16"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary underline underline-offset-2 hover:no-underline"
+                  className="bg-secondary border border-border rounded-xl p-5 text-center space-y-2 hover:border-primary transition-colors"
                 >
-                  Зеленокарт
+                  <Navigation className="w-6 h-6 text-primary mx-auto" />
+                  <p className="text-muted-foreground text-sm">Проложить маршрут</p>
                 </a>
-              </p>
-              <p className="text-muted-foreground text-sm">ТРЦ Зеленопарк</p>
-              <div className="overflow-hidden rounded-lg mt-2">
+              </div>
+              <div className="overflow-hidden rounded-lg">
                 <img src={venueImage} alt="Зеленокарт — картинг и боулинг" className="w-full h-40 object-cover" />
               </div>
             </div>
@@ -261,13 +280,9 @@ const Index = () => {
                 <Gift className="w-8 h-8 text-primary" />
               </div>
               <h3 className="font-display text-foreground uppercase">Подарки</h3>
-              <p className="text-muted-foreground text-sm">Вишлист Вероники&nbsp;— выберите и&nbsp;забронируйте подарок</p>
-              <a
-                href="#"
-                className="inline-block mt-3 px-5 py-2 bg-primary text-primary-foreground font-display text-sm uppercase rounded-lg hover:opacity-90 transition-opacity"
-              >
-                Открыть вишлист
-              </a>
+              <p className="text-muted-foreground text-sm">
+                Если желаете подарить мне подарок, то лучше всего это сделать деньгами, потому что я&nbsp;коплю на&nbsp;новый телефон&nbsp;❤️
+              </p>
             </div>
 
             {/* Подтверждение */}
