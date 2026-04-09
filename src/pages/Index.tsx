@@ -277,13 +277,13 @@ const Index = () => {
             </div>
 
             {/* Подарки */}
-            <div className="bg-card border border-border rounded-xl p-6 text-center space-y-3">
+            <div className="relative bg-card rounded-xl p-6 text-center space-y-3 border-2 border-primary/60 shadow-[0_0_15px_hsl(120_100%_45%/0.3),0_0_30px_hsl(120_100%_45%/0.15),inset_0_0_15px_hsl(120_100%_45%/0.05)] animate-pulse-glow">
               <div className="flex justify-center">
                 <Gift className="w-8 h-8 text-primary" />
               </div>
               <h3 className="font-display text-foreground uppercase">Подарки</h3>
               <p className="text-muted-foreground text-sm">
-                Если желаете подарить мне подарок, то лучше всего это сделать деньгами, потому что я&nbsp;коплю на&nbsp;новый телефон&nbsp;❤️
+                Если желаете подарить мне подарок, то лучше всего это сделать деньгами, потому что я&nbsp;коплю на&nbsp;новый телефон&nbsp;💚
               </p>
             </div>
 
