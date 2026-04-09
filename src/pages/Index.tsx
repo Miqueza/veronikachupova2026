@@ -50,7 +50,7 @@ const Index = () => {
             <div className="absolute -inset-3 bg-primary/20 rounded-2xl blur-2xl animate-pulse-glow" />
             <div className="relative overflow-hidden rounded-2xl border-2 border-primary/50 shadow-[0_0_40px_hsl(120_100%_45%/0.3)]">
               <img
-                src={veronikaPhoto}
+                src={veronikaRacing}
                 alt="Вероника — гонщица"
                 className="w-full aspect-[16/9] object-cover"
               />
