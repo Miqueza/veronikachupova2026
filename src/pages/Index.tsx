@@ -1,5 +1,5 @@
 import heroImage from "@/assets/hero-karting.jpg";
-import veronikaPhoto from "@/assets/veronika-photo.jpg";
+import veronikaRacing from "@/assets/veronika-racing.jpg";
 
 import venueImage from "@/assets/venue-photo.jpg";
 import { Phone, MapPin, Clock, Gift, Flag, Users, Apple, CircleCheckBig, Camera, Pizza, Trophy, Send, MessageCircle, ExternalLink, CalendarPlus, Navigation } from "lucide-react";
@@ -50,7 +50,7 @@ const Index = () => {
             <div className="absolute -inset-3 bg-primary/20 rounded-2xl blur-2xl animate-pulse-glow" />
             <div className="relative overflow-hidden rounded-2xl border-2 border-primary/50 shadow-[0_0_40px_hsl(120_100%_45%/0.3)]">
               <img
-                src={veronikaPhoto}
+                src={veronikaRacing}
                 alt="Вероника — гонщица"
                 className="w-full aspect-[16/9] object-cover"
               />
@@ -75,47 +75,49 @@ const Index = () => {
             в&nbsp;Зеленопарке
           </p>
 
-          <div className="flex flex-col items-center gap-3 text-base md:text-lg pt-3 w-full max-w-sm mx-auto">
-            <div className="grid grid-cols-2 gap-3 w-full">
-              <div className="flex flex-col items-center gap-1 bg-secondary px-3 py-3 rounded-lg border border-border">
-                <span className="flex items-center gap-2">
-                  <Clock className="w-5 h-5 text-primary" />
-                  <span className="text-sm">22 мая, 16:00</span>
-                </span>
-                <span className="text-[10px] text-muted-foreground text-center leading-tight">Не&nbsp;опаздывайте, лучше приехать заранее</span>
+          <div className="w-full max-w-sm mx-auto pt-3">
+            <div className="bg-card border border-border rounded-xl p-3 space-y-3">
+              <div className="grid grid-cols-2 gap-3">
+                <div className="flex flex-col items-center justify-center gap-1 bg-secondary px-3 py-3 rounded-lg">
+                  <span className="flex items-center gap-2">
+                    <Clock className="w-5 h-5 text-primary" />
+                    <span className="text-sm">22 мая, 16:00</span>
+                  </span>
+                  <span className="text-[10px] text-muted-foreground text-center leading-tight">Не&nbsp;опаздывайте, лучше приехать заранее</span>
+                </div>
+                <button
+                  onClick={handleAddToCalendar}
+                  className="flex flex-col items-center justify-center gap-1 bg-secondary px-3 py-3 rounded-lg hover:bg-secondary/80 transition-colors cursor-pointer"
+                  title="Добавить в календарь"
+                >
+                  <span className="flex items-center gap-2">
+                    <CalendarPlus className="w-5 h-5 text-primary" />
+                    <span className="text-sm">Добавить</span>
+                  </span>
+                  <span className="text-[10px] text-muted-foreground">в&nbsp;календарь</span>
+                </button>
               </div>
-              <button
-                onClick={handleAddToCalendar}
-                className="flex flex-col items-center gap-1 bg-secondary px-3 py-3 rounded-lg border border-border hover:border-primary transition-colors cursor-pointer"
-                title="Добавить в календарь"
-              >
-                <span className="flex items-center gap-2">
-                  <CalendarPlus className="w-5 h-5 text-primary" />
-                  <span className="text-sm">Добавить</span>
-                </span>
-                <span className="text-[10px] text-muted-foreground">в&nbsp;календарь</span>
-              </button>
-            </div>
-            <div className="grid grid-cols-2 gap-3 w-full">
-              <div className="flex flex-col items-center gap-1 bg-secondary px-3 py-3 rounded-lg border border-border">
-                <span className="flex items-center gap-2">
-                  <MapPin className="w-5 h-5 text-primary" />
-                  <span className="text-sm">Зеленопарк</span>
-                </span>
-                <span className="text-[10px] text-muted-foreground">Картинг-центр Зеленокарт</span>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="flex flex-col items-center justify-center gap-1 bg-secondary px-3 py-3 rounded-lg">
+                  <span className="flex items-center gap-2">
+                    <MapPin className="w-5 h-5 text-primary" />
+                    <span className="text-sm">Зеленопарк</span>
+                  </span>
+                  <span className="text-[10px] text-muted-foreground">Картинг-центр Зеленокарт</span>
+                </div>
+                <a
+                  href="https://yandex.ru/maps/org/zelenokart/147521538181/?ll=37.258687%2C55.999221&z=16"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col items-center justify-center gap-1 bg-secondary px-3 py-3 rounded-lg hover:bg-secondary/80 transition-colors"
+                >
+                  <span className="flex items-center gap-2">
+                    <Navigation className="w-5 h-5 text-primary" />
+                    <span className="text-sm">Маршрут</span>
+                  </span>
+                  <span className="text-[10px] text-muted-foreground">Проложить путь</span>
+                </a>
               </div>
-              <a
-                href="https://yandex.ru/maps/org/zelenokart/147521538181/?ll=37.258687%2C55.999221&z=16"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex flex-col items-center gap-1 bg-secondary px-3 py-3 rounded-lg border border-border hover:border-primary transition-colors"
-              >
-                <span className="flex items-center gap-2">
-                  <Navigation className="w-5 h-5 text-primary" />
-                  <span className="text-sm">Маршрут</span>
-                </span>
-                <span className="text-[10px] text-muted-foreground">Проложить путь</span>
-              </a>
             </div>
           </div>
         </div>
@@ -254,34 +256,34 @@ const Index = () => {
                 <MapPin className="w-6 h-6 text-primary" />
                 <h3 className="font-display text-foreground uppercase text-lg">Место</h3>
               </div>
+              <div className="overflow-hidden rounded-lg">
+                <img src={venueImage} alt="Зеленокарт — картинг и боулинг" className="w-full h-40 object-cover" />
+              </div>
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-secondary border border-border rounded-xl p-5 text-center space-y-2">
-                  <p className="text-primary font-display text-lg">Зеленопарк</p>
-                  <p className="text-muted-foreground text-sm">Картинг-центр Зеленокарт</p>
+                <div className="bg-secondary border border-border rounded-xl p-5 text-center flex flex-col items-center justify-center gap-2">
+                  <MapPin className="w-6 h-6 text-primary" />
+                  <p className="text-foreground font-display text-sm">Зеленокарт</p>
                 </div>
                 <a
                   href="https://yandex.ru/maps/org/zelenokart/147521538181/?ll=37.258687%2C55.999221&z=16"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-secondary border border-border rounded-xl p-5 text-center space-y-2 hover:border-primary transition-colors"
+                  className="bg-secondary border border-border rounded-xl p-5 text-center flex flex-col items-center justify-center gap-2 hover:border-primary transition-colors"
                 >
-                  <Navigation className="w-6 h-6 text-primary mx-auto" />
-                  <p className="text-muted-foreground text-sm">Проложить маршрут</p>
+                  <Navigation className="w-6 h-6 text-primary" />
+                  <p className="text-foreground font-display text-sm">Проложить маршрут</p>
                 </a>
-              </div>
-              <div className="overflow-hidden rounded-lg">
-                <img src={venueImage} alt="Зеленокарт — картинг и боулинг" className="w-full h-40 object-cover" />
               </div>
             </div>
 
             {/* Подарки */}
-            <div className="bg-card border border-border rounded-xl p-6 text-center space-y-3">
+            <div className="relative bg-card rounded-xl p-6 text-center space-y-3 border-2 border-primary/60 neon-border-glow">
               <div className="flex justify-center">
                 <Gift className="w-8 h-8 text-primary" />
               </div>
               <h3 className="font-display text-foreground uppercase">Подарки</h3>
               <p className="text-muted-foreground text-sm">
-                Если желаете подарить мне подарок, то лучше всего это сделать деньгами, потому что я&nbsp;коплю на&nbsp;новый телефон&nbsp;❤️
+                Если желаете подарить мне подарок, то лучше всего это сделать деньгами, потому что я&nbsp;коплю на&nbsp;новый телефон&nbsp;💚
               </p>
             </div>
 
