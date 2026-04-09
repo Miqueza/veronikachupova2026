@@ -76,30 +76,45 @@ const Index = () => {
           </p>
 
           <div className="flex flex-col items-center gap-3 text-base md:text-lg pt-3 w-full max-w-sm mx-auto">
-            <button
-              onClick={handleAddToCalendar}
-              className="w-full flex flex-col items-center gap-1 bg-secondary px-4 py-3 rounded-lg border border-border hover:border-primary transition-colors cursor-pointer"
-              title="Добавить в календарь"
-            >
-              <span className="flex items-center gap-2">
-                <Clock className="w-5 h-5 text-primary" />
-                22 мая 2026, 16:00
-              </span>
-              <span className="text-xs text-muted-foreground">Нажмите, чтобы добавить в&nbsp;календарь</span>
-            </button>
-            <div className="w-full flex flex-col items-center gap-1 bg-secondary px-4 py-3 rounded-lg border border-border">
-              <span className="flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-primary" />
-                Зеленопарк, <a href="https://zelenokart.ru" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Зеленокарт</a>
-              </span>
+            <div className="grid grid-cols-2 gap-3 w-full">
+              <div className="flex flex-col items-center gap-1 bg-secondary px-3 py-3 rounded-lg border border-border">
+                <span className="flex items-center gap-2">
+                  <Clock className="w-5 h-5 text-primary" />
+                  <span className="text-sm">22 мая, 16:00</span>
+                </span>
+                <span className="text-[10px] text-muted-foreground text-center leading-tight">Не&nbsp;опаздывайте, лучше приехать заранее</span>
+              </div>
+              <button
+                onClick={handleAddToCalendar}
+                className="flex flex-col items-center gap-1 bg-secondary px-3 py-3 rounded-lg border border-border hover:border-primary transition-colors cursor-pointer"
+                title="Добавить в календарь"
+              >
+                <span className="flex items-center gap-2">
+                  <CalendarPlus className="w-5 h-5 text-primary" />
+                  <span className="text-sm">Добавить</span>
+                </span>
+                <span className="text-[10px] text-muted-foreground">в&nbsp;календарь</span>
+              </button>
+            </div>
+            <div className="grid grid-cols-2 gap-3 w-full">
+              <div className="flex flex-col items-center gap-1 bg-secondary px-3 py-3 rounded-lg border border-border">
+                <span className="flex items-center gap-2">
+                  <MapPin className="w-5 h-5 text-primary" />
+                  <span className="text-sm">Зеленопарк</span>
+                </span>
+                <span className="text-[10px] text-muted-foreground">Картинг-центр Зеленокарт</span>
+              </div>
               <a
                 href="https://yandex.ru/maps/org/zelenokart/147521538181/?ll=37.258687%2C55.999221&z=16"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-primary hover:underline flex items-center gap-1"
+                className="flex flex-col items-center gap-1 bg-secondary px-3 py-3 rounded-lg border border-border hover:border-primary transition-colors"
               >
-                Проложить маршрут
-                <ExternalLink className="w-3 h-3" />
+                <span className="flex items-center gap-2">
+                  <Navigation className="w-5 h-5 text-primary" />
+                  <span className="text-sm">Маршрут</span>
+                </span>
+                <span className="text-[10px] text-muted-foreground">Проложить путь</span>
               </a>
             </div>
           </div>
