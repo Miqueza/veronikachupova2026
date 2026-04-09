@@ -256,24 +256,25 @@ const Index = () => {
                 <MapPin className="w-6 h-6 text-primary" />
                 <h3 className="font-display text-foreground uppercase text-lg">Место</h3>
               </div>
+              <div className="overflow-hidden rounded-lg">
+                <img src={venueImage} alt="Зеленокарт — картинг и боулинг" className="w-full h-40 object-cover" />
+              </div>
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-secondary border border-border rounded-xl p-5 text-center space-y-2">
-                  <p className="text-primary font-display text-lg">Зеленопарк</p>
-                  <p className="text-muted-foreground text-sm">Картинг-центр Зеленокарт</p>
+                <div className="bg-secondary border border-border rounded-xl p-5 text-center flex flex-col items-center justify-center gap-2">
+                  <MapPin className="w-6 h-6 text-primary" />
+                  <p className="text-foreground font-display text-sm">Зеленокарт</p>
                 </div>
                 <a
                   href="https://yandex.ru/maps/org/zelenokart/147521538181/?ll=37.258687%2C55.999221&z=16"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-secondary border border-border rounded-xl p-5 text-center space-y-2 hover:border-primary transition-colors"
+                  className="bg-secondary border border-border rounded-xl p-5 text-center flex flex-col items-center justify-center gap-2 hover:border-primary transition-colors"
                 >
-                  <Navigation className="w-6 h-6 text-primary mx-auto" />
-                  <p className="text-muted-foreground text-sm">Проложить маршрут</p>
+                  <Navigation className="w-6 h-6 text-primary" />
+                  <p className="text-foreground font-display text-sm">Проложить маршрут</p>
                 </a>
               </div>
-              <div className="overflow-hidden rounded-lg">
-                <img src={venueImage} alt="Зеленокарт — картинг и боулинг" className="w-full h-40 object-cover" />
-              </div>
+            </div>
             </div>
 
             {/* Подарки */}
