@@ -76,46 +76,35 @@ const Index = () => {
           </p>
 
           <div className="w-full max-w-sm mx-auto pt-3">
-            <div className="bg-card border border-border rounded-xl p-3 space-y-3">
-              <div className="grid grid-cols-2 gap-3">
-                <div className="flex flex-col items-center justify-center gap-1 bg-secondary px-3 py-3 rounded-lg">
-                  <span className="flex items-center gap-2">
-                    <Clock className="w-5 h-5 text-primary" />
-                    <span className="text-sm">22 мая, 16:00</span>
-                  </span>
-                  <span className="text-[10px] text-muted-foreground text-center leading-tight">Не&nbsp;опаздывайте, лучше приехать заранее</span>
-                </div>
+            <div className="bg-card border border-border rounded-xl p-4 grid grid-cols-2 gap-4">
+              <div className="flex flex-col items-center text-center gap-1">
+                <span className="flex items-center gap-2">
+                  <Clock className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-semibold">22 мая, 16:00</span>
+                </span>
+                <span className="text-[10px] text-muted-foreground leading-tight">Не&nbsp;опаздывайте, лучше приехать заранее</span>
                 <button
                   onClick={handleAddToCalendar}
-                  className="flex flex-col items-center justify-center gap-1 bg-secondary px-3 py-3 rounded-lg hover:bg-secondary/80 transition-colors cursor-pointer"
-                  title="Добавить в календарь"
+                  className="flex items-center gap-1 text-primary text-[11px] mt-1 hover:underline"
                 >
-                  <span className="flex items-center gap-2">
-                    <CalendarPlus className="w-5 h-5 text-primary" />
-                    <span className="text-sm">Добавить</span>
-                  </span>
-                  <span className="text-[10px] text-muted-foreground">в&nbsp;календарь</span>
+                  <CalendarPlus className="w-3.5 h-3.5" />
+                  <span>Добавить в календарь</span>
                 </button>
               </div>
-              <div className="grid grid-cols-2 gap-3">
-                <div className="flex flex-col items-center justify-center gap-1 bg-secondary px-3 py-3 rounded-lg">
-                  <span className="flex items-center gap-2">
-                    <MapPin className="w-5 h-5 text-primary" />
-                    <span className="text-sm">Зеленопарк</span>
-                  </span>
-                  <span className="text-[10px] text-muted-foreground">Картинг-центр Зеленокарт</span>
-                </div>
+              <div className="flex flex-col items-center text-center gap-1">
+                <span className="flex items-center gap-2">
+                  <MapPin className="w-5 h-5 text-primary" />
+                  <span className="text-sm font-semibold">Зеленопарк</span>
+                </span>
+                <span className="text-[10px] text-muted-foreground">Картинг-центр Зеленокарт</span>
                 <a
                   href="https://yandex.ru/maps/org/zelenokart/147521538181/?ll=37.258687%2C55.999221&z=16"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex flex-col items-center justify-center gap-1 bg-secondary px-3 py-3 rounded-lg hover:bg-secondary/80 transition-colors"
+                  className="flex items-center gap-1 text-primary text-[11px] mt-1 hover:underline"
                 >
-                  <span className="flex items-center gap-2">
-                    <Navigation className="w-5 h-5 text-primary" />
-                    <span className="text-sm">Маршрут</span>
-                  </span>
-                  <span className="text-[10px] text-muted-foreground">Проложить путь</span>
+                  <Navigation className="w-3.5 h-3.5" />
+                  <span>Построить маршрут</span>
                 </a>
               </div>
             </div>
@@ -259,25 +248,23 @@ const Index = () => {
               <div className="overflow-hidden rounded-lg">
                 <img src={venueImage} alt="Зеленокарт — картинг и боулинг" className="w-full h-40 object-cover" />
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-secondary border border-border rounded-xl p-5 text-center flex flex-col items-center justify-center gap-2">
-                  <MapPin className="w-6 h-6 text-primary" />
-                  <p className="text-foreground font-display text-sm">Зеленокарт</p>
-                </div>
+              <div className="text-center space-y-1">
+                <p className="text-foreground font-display text-base">Зеленопарк</p>
+                <p className="text-muted-foreground text-sm">Картинг-центр Зеленокарт</p>
                 <a
                   href="https://yandex.ru/maps/org/zelenokart/147521538181/?ll=37.258687%2C55.999221&z=16"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-secondary border border-border rounded-xl p-5 text-center flex flex-col items-center justify-center gap-2 hover:border-primary transition-colors"
+                  className="inline-flex items-center gap-1.5 text-primary text-sm mt-2 hover:underline"
                 >
-                  <Navigation className="w-6 h-6 text-primary" />
-                  <p className="text-foreground font-display text-sm">Проложить маршрут</p>
+                  <Navigation className="w-4 h-4" />
+                  <span>Построить маршрут</span>
                 </a>
               </div>
             </div>
 
             {/* Подарки */}
-            <div className="relative bg-card rounded-xl p-6 text-center space-y-3 border-2 border-primary/60 neon-border-glow">
+            <div className="relative bg-card rounded-xl p-6 text-center space-y-3 border-2 border-primary/60 neon-border-glow my-4">
               <div className="flex justify-center">
                 <Gift className="w-8 h-8 text-primary" />
               </div>
