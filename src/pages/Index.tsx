@@ -82,7 +82,7 @@ const Index = () => {
                   <Clock className="w-5 h-5 text-primary" />
                   <span className="text-sm font-semibold">22 мая, 16:00</span>
                 </span>
-                <span className="text-[10px] text-muted-foreground leading-tight">Не&nbsp;опаздывайте, лучше приехать заранее</span>
+                <span className="text-[10px] text-muted-foreground leading-tight">Не&nbsp;опаздывайте</span>
                 <button
                   onClick={handleAddToCalendar}
                   className="flex items-center gap-1 text-primary text-[11px] mt-1 hover:underline"
@@ -282,7 +282,7 @@ const Index = () => {
               <h3 className="font-display text-foreground uppercase text-lg">Подтвердите присутствие</h3>
               <div className="space-y-2">
                 <p className="text-muted-foreground text-sm">
-                  Пожалуйста, подтвердите до&nbsp;<span className="text-primary font-semibold">13&nbsp;марта&nbsp;2026</span>
+                  Подтвердить присутствие нужно до&nbsp;<span className="text-primary font-semibold">30&nbsp;апреля</span>
                 </p>
               </div>
               <div className="bg-secondary/50 rounded-lg p-4 space-y-2">
