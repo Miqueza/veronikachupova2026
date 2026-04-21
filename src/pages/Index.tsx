@@ -125,7 +125,7 @@ const Index = () => {
             Что вас ждёт
           </h2>
           <div className="space-y-4">
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <PerkCard
                 icon={<Pizza className="w-8 h-8" />}
                 title="Вкусная еда"
@@ -144,7 +144,7 @@ const Index = () => {
                 description="Тренировка, квалификация и&nbsp;финальная гонка на&nbsp;20&nbsp;кругов!"
               />
             </div>
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <PerkCard
                 icon={<Trophy className="w-8 h-8" />}
                 title="Награждение"
@@ -246,7 +246,7 @@ const Index = () => {
                 <h3 className="font-display text-foreground uppercase text-lg">Место</h3>
               </div>
               <div className="overflow-hidden rounded-lg">
-                <img src={venueImage} alt="Зеленокарт — картинг и боулинг" className="w-full h-40 object-cover" />
+                <img src={venueImage} alt="Зеленокарт — картинг и боулинг" className="w-full h-40 sm:h-48 object-cover" loading="lazy" />
               </div>
               <div className="text-center space-y-1">
                 <p className="text-foreground font-display text-base">Зеленопарк</p>
@@ -264,7 +264,7 @@ const Index = () => {
             </div>
 
             {/* Подарки */}
-            <div className="relative bg-card rounded-xl p-6 text-center space-y-3 border-2 border-primary/60 neon-border-glow my-4">
+            <div className="relative bg-card rounded-xl p-6 text-center space-y-3 border border-border my-4">
               <div className="flex justify-center">
                 <Gift className="w-8 h-8 text-primary" />
               </div>
@@ -282,7 +282,7 @@ const Index = () => {
               <h3 className="font-display text-foreground uppercase text-lg">Подтвердите присутствие</h3>
               <div className="space-y-2">
                 <p className="text-muted-foreground text-sm">
-                  Подтвердить присутствие нужно до&nbsp;<span className="text-primary font-semibold">30&nbsp;апреля</span>
+                  Подтвердить присутствие нужно до&nbsp;<span className="text-primary font-semibold">5&nbsp;мая</span>
                 </p>
               </div>
               <div className="bg-secondary/50 rounded-lg p-4 space-y-2">
@@ -334,7 +334,7 @@ const Index = () => {
           </h2>
           <p className="text-foreground font-display text-lg">Даниил</p>
 
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-3 gap-2 sm:gap-3">
             <a
               href="tel:+79067302360"
               className="flex flex-col items-center gap-2 bg-card border border-border p-4 rounded-xl hover:border-primary transition-colors group"
