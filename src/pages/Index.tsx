@@ -136,15 +136,11 @@ const Index = () => {
                 title="Фотограф"
                 description="Профессиональные фотографии мероприятия&nbsp;— для тёплых воспоминаний!"
               />
-            </div>
-            <div className="grid grid-cols-1 max-w-sm mx-auto">
               <PerkCard
                 icon={<Flag className="w-8 h-8" />}
                 title="Настоящие гонки"
                 description="Тренировка, квалификация и&nbsp;финальная гонка на&nbsp;20&nbsp;кругов!"
               />
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <PerkCard
                 icon={<Trophy className="w-8 h-8" />}
                 title="Награждение"
