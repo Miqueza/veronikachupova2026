@@ -1,73 +1,43 @@
-# Welcome to your Lovable project
+# nikachupova
 
-## Project info
+Статический React/Vite сайт-приглашение на день рождения Вероники.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Стек
 
-## How can I edit this code?
+- Vite + React + TypeScript
+- Tailwind CSS / shadcn-ui компоненты
+- Docker: build stage `node:22-alpine`, runtime `nginx:1.27-alpine`
 
-There are several ways of editing your application.
+## Пути и публикация
 
-**Use Lovable**
+- Проект: `/home/chupuezahe/workspace/projects/nikachupova`
+- GitHub: `git@github.com:Miqueza/veronikachupova2026.git`
+- Контейнер: `nikachupova`
+- Локальный upstream: `127.0.0.1:8331`
+- Публичный домен: `https://nikachupova.ru`
+- Nginx vhost: `/etc/nginx/conf.d/nikachupova.ru.conf`
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Команды
 
-Changes made via Lovable will be committed automatically to this repo.
+```bash
+npm ci
+npm run lint
+npm run test
+npm run build
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+docker compose up -d --build
+curl -I http://127.0.0.1:8331/
 ```
 
-**Edit a file directly in GitHub**
+## Деплой
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+1. Проверить, что `nikachupova.ru` указывает на текущий VPS `82.146.58.193`.
+2. Собрать проект: `docker compose up -d --build`.
+3. Проверить локально: `curl http://127.0.0.1:8331/`.
+4. Проверить nginx: `sudo nginx -t`.
+5. Перезагрузить nginx: `sudo systemctl reload nginx`.
+6. Проверить публично: `curl https://nikachupova.ru/` и убедиться по title/H1, что это сайт Вероники, а не fallback/Beinform/Natalia.
 
-**Use GitHub Codespaces**
+## Секреты
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Секретов у проекта нет.
